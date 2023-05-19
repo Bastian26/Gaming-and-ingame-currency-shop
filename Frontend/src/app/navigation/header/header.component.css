@@ -1,0 +1,24 @@
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #272728;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px;
+  align-items: flex-start;
+  height: 125px;
+}
+
+.header-top {
+  width: 20%;
+  height: 100px;
+  background-color: red;
+}
+
+.header-bottom {
+  width: 20%;
+  height: 100px;
+  background-color: red;
+}
