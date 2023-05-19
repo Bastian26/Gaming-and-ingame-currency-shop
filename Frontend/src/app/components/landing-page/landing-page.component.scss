@@ -45,10 +45,15 @@
 
 .aboveGold {
   width: 100%;
-  height: 300px;
   margin-top: 270px;
+  align-items: center;
   border-top: 1px solid rgb(200, 200, 200);
   background-color: rgb(220, 220, 220);
   position: relative;
   z-index: 1;
+
+  .aboveGoldText {
+    width: 80%;
+    margin: 30px auto;
+  }
 }
