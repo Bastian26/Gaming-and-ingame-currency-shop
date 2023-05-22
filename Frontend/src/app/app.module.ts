@@ -1,22 +1,25 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { MatMenuModule } from '@angular/material/menu';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './navigation/header/header.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    LandingPageComponent
-  ],
+  declarations: [AppComponent, HeaderComponent, LandingPageComponent],
   imports: [
     BrowserModule,
-    NgbModule
+    MatMenuModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatIconModule,
+    FormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

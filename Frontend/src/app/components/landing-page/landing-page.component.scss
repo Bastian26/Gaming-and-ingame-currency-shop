@@ -1,3 +1,49 @@
+aside {
+  width: 80px;
+  height: fit-content;
+  background-color: rgb(250, 250, 250);
+  border: 1px solid rgba(120, 120, 120, 0.5);
+  position: fixed;
+  right: 0;
+  margin-top: 5%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px 0 0 5px;
+  padding: 0;
+
+  .asideHeader {
+    background-color: orange;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+    font-weight: 700;
+    padding-top: 13px;
+    border-radius: 5px 0 0 0;
+  }
+  .iconWrapper {
+    width: 100%;
+    text-align: center;
+    img {
+      margin: 5px 5px 5px 5px;
+      width: 50px;
+      height: auto;
+    }
+  }
+
+  div:nth-child(2) img,
+  div:nth-child(3) img {
+    width: 43px;
+  }
+
+  .iconWrapper:hover {
+    background-color: rgb(220, 220, 220);
+  }
+}
+
 .landing-page-img {
   width: 100%;
   height: 900px;
@@ -54,6 +100,28 @@
 
   .aboveGoldText {
     width: 80%;
-    margin: 30px auto;
+    margin: 30px auto 0px;
+
+    :last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+footer {
+  width: 100%;
+  align-items: center;
+  border-top: 1px solid rgb(200, 200, 200);
+  background-color: rgb(250, 250, 250);
+  position: relative;
+  z-index: 1;
+
+  .footerContent {
+    width: 80%;
+    margin: 30px auto 0px;
+
+    :last-child {
+      margin-bottom: 0;
+    }
   }
 }
