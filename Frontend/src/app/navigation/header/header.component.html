@@ -1,55 +1,62 @@
 <header class="header">
   <nav class="header-top">
-    <div>
+    <div class="logo-wrapper">
       <img
         src="../../../assets/img/logos/GoldTradingDeluxeLogo.PNG"
         alt="Gold Trading Deluxe Logo"
         class="logo"
       />
     </div>
-  </nav>
-  <div class="header-bottom">
-    <div>
-      <button
-        mat-button
-        [matMenuTriggerFor]="animals"
-        class="showAllGamesDropDownBtn"
-      >
-        Alle Spiele
-      </button>
-
-      <mat-menu #animals="matMenu" class="chooseGameNestedButton">
-        <button mat-menu-item [matMenuTriggerFor]="wow">WoW</button>
-        <button mat-menu-item [matMenuTriggerFor]="newWorld">New World</button>
-      </mat-menu>
-
-      <mat-menu #wow="matMenu" class="chooseGameNestedButton">
-        <button mat-menu-item [matMenuTriggerFor]="wowRetail">WoW</button>
-        <button mat-menu-item [matMenuTriggerFor]="wowClassic">
-          WoW Classic
-        </button>
-      </mat-menu>
-
-      <mat-menu #newWorld="matMenu" class="chooseGameNestedButton">
-        <button mat-menu-item>Taler</button>
-      </mat-menu>
-
-      <mat-menu #wowRetail="matMenu" class="chooseGameNestedButton">
-        <button mat-menu-item>Gold</button>
-      </mat-menu>
-
-      <mat-menu #wowClassic="matMenu" class="chooseGameNestedButton">
-        <button mat-menu-item>Gold</button>
-      </mat-menu>
-      2
-    </div>
-    <!--<div class="input-field col s8 nopad">
+    <div class="input-field nopad">
       <input
         type="text"
         ng-model="search"
         class="form-control search"
         placeholder="Suchen..."
       />
-    </div>-->
+    </div>
+  </nav>
+  <div class="header-bottom">
+    <div class="btn-wrapper">
+      <div class="all-games-dropdown-btn navbar-item">
+        <button
+          mat-button
+          [matMenuTriggerFor]="animals"
+          class="showAllGamesDropDownBtn"
+        >
+          Alle Spiele
+        </button>
+
+        <mat-menu #animals="matMenu" class="chooseGameNestedButton">
+          <button mat-menu-item [matMenuTriggerFor]="wow">WoW</button>
+          <button mat-menu-item [matMenuTriggerFor]="newWorld">New World</button>
+        </mat-menu>
+
+        <mat-menu #wow="matMenu" class="chooseGameNestedButton">
+          <button mat-menu-item [matMenuTriggerFor]="wowRetail">WoW</button>
+          <button mat-menu-item [matMenuTriggerFor]="wowClassic">
+            WoW Classic
+          </button>
+        </mat-menu>
+
+        <mat-menu #newWorld="matMenu" class="chooseGameNestedButton">
+          <button mat-menu-item>Taler</button>
+        </mat-menu>
+
+        <mat-menu #wowRetail="matMenu" class="chooseGameNestedButton">
+          <button mat-menu-item>Gold</button>
+        </mat-menu>
+
+        <mat-menu #wowClassic="matMenu" class="chooseGameNestedButton">
+          <button mat-menu-item>Gold</button>
+        </mat-menu>
+      </div>
+
+      <div class="navbar-item">Konto</div>
+      <div class="navbar-item">Hilfe</div>
+      <div class="navbar-item">Zahlungsoptionen</div>
+      <div class="navbar-item">About</div>
+    </div>
+  
   </div>
 </header>

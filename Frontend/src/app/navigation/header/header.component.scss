@@ -17,10 +17,13 @@
     margin: 0 auto;
     align-items: center;
     padding-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
 
-    div {
+    .logo-wrapper {
       width: 12.5%;
       height: 100%;
+      margin-left: 23px;
       text-align: center;
 
       .logo {
@@ -28,6 +31,12 @@
         width: auto;
         margin-left: 20px;
       }
+    }
+
+    .input-field .search {
+      width: 400px;
+      margin: 44px 2px 0 60px;
+      height: 38px;
     }
   }
 
@@ -38,34 +47,50 @@
     width: 100%;
     border-top: 1px solid rgba(222, 222, 222, 0.5);
     background-color: #272728;
+    display: flex;
+    justify-content: space-between;
 
-    div {
+    .btn-wrapper {
       width: 80%;
       margin: 0 auto;
       height: 38.5px;
+      display: flex;
 
-      .showAllGamesDropDownBtn {
-        background-color: #272728;
-        color: white;
-        height: 100%;
-        width: 200px;
+      .navbar-item {
+        flex: 1; /* Alle Elemente nehmen gleich viel Platz ein */
+        padding: 10px; /* Fügen Sie Padding hinzu, um den Abstand zwischen den Elementen zu erhöhen */
         border-right: 1px solid rgba(222, 222, 222, 0.5);
         border-left: 1px solid rgba(222, 222, 222, 0.5);
-        border-bottom: 0;
-        border-top: 0;
+        text-align: center;
+        
+        &:first-child {
+          padding: 0;
+        }
+
+        .showAllGamesDropDownBtn {
+          background-color: #272728;
+          color: white;
+          height: 100%;
+          width: 100%;
+          border: 0;
+        }
+
+        .showAllGamesDropDownBtn:hover {
+          background-color: #f9d73e;
+          color: #272728;
+          font-weight: bold;
+          opacity: 0.7;
+        }
       }
 
-      .showAllGamesDropDownBtn:hover {
+      .navbar-item:hover {
         background-color: #f9d73e;
         color: #272728;
         font-weight: bold;
         opacity: 0.7;
       }
 
-      .search {
-        width: 20%;
-        margin: 0;
-      }
+      
     }
   }
 }
