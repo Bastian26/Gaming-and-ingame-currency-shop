@@ -1,11 +1,12 @@
 <header class="header">
   <nav class="header-top">
     <div class="logo-wrapper">
-      <img
-        src="../../../assets/img/logos/GoldTradingDeluxeLogo.PNG"
-        alt="Gold Trading Deluxe Logo"
-        class="logo"
-      />
+      <a routerLink="">
+        <img
+          src="../../../assets/img/logos/GoldTradingDeluxeLogo.PNG"
+          alt="Gold Trading Deluxe Logo"
+          class="logo"
+      /></a>
     </div>
     <div class="input-field nopad">
       <input
@@ -21,19 +22,32 @@
       <div class="all-games-dropdown-btn navbar-item">
         <button
           mat-button
-          [matMenuTriggerFor]="animals"
+          [matMenuTriggerFor]="games"
           class="showAllGamesDropDownBtn"
         >
-          Alle Spiele
+          Kategorien
         </button>
 
-        <mat-menu #animals="matMenu" class="chooseGameNestedButton">
-          <button mat-menu-item [matMenuTriggerFor]="wow">WoW</button>
-          <button mat-menu-item [matMenuTriggerFor]="newWorld">New World</button>
+        <mat-menu #games="matMenu" class="chooseGameNestedButton">
+          <button mat-menu-item [matMenuTriggerFor]="wow">
+            <a routerLink="wow">WoW</a>
+          </button>
+          <button mat-menu-item [matMenuTriggerFor]="newWorld">
+            New World
+          </button>
+          <button mat-menu-item [matMenuTriggerFor]="newWorld">
+            Bethesda Games
+          </button>
+          <button mat-menu-item [matMenuTriggerFor]="newWorld">
+            Rockstar Games
+          </button>
+          <button mat-menu-item [matMenuTriggerFor]="newWorld">EA Games</button>
         </mat-menu>
 
         <mat-menu #wow="matMenu" class="chooseGameNestedButton">
-          <button mat-menu-item [matMenuTriggerFor]="wowRetail">WoW</button>
+          <button mat-menu-item [matMenuTriggerFor]="wowRetail">
+            <a routerLink="wow-retail">WoW Retail</a>
+          </button>
           <button mat-menu-item [matMenuTriggerFor]="wowClassic">
             WoW Classic
           </button>
@@ -57,6 +71,5 @@
       <div class="navbar-item">Zahlungsoptionen</div>
       <div class="navbar-item">About</div>
     </div>
-  
   </div>
 </header>
