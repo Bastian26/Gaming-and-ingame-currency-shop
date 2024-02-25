@@ -29,40 +29,54 @@
         </button>
 
         <mat-menu #games="matMenu" class="chooseGameNestedButton">
-          <button mat-menu-item [matMenuTriggerFor]="wow">
-            <a routerLink="wow">WoW</a>
-          </button>
-          <button mat-menu-item [matMenuTriggerFor]="newWorld">
-            New World
-          </button>
-          <button mat-menu-item [matMenuTriggerFor]="newWorld">
-            Bethesda Games
-          </button>
-          <button mat-menu-item [matMenuTriggerFor]="newWorld">
-            Rockstar Games
-          </button>
-          <button mat-menu-item [matMenuTriggerFor]="newWorld">EA Games</button>
+          <a routerLink="wow"
+            ><button mat-menu-item [matMenuTriggerFor]="wow">WoW</button></a
+          >
+          <a routerLink="#"
+            ><button mat-menu-item [matMenuTriggerFor]="newWorld">
+              New World
+            </button></a
+          >
+          <a routerLink="#"
+            ><button mat-menu-item [matMenuTriggerFor]="newWorld">
+              Bethesda Games
+            </button></a
+          >
+          <a routerLink="#"
+            ><button mat-menu-item [matMenuTriggerFor]="newWorld">
+              Rockstar Games
+            </button></a
+          >
+          <a routerLink="#"
+            ><button mat-menu-item [matMenuTriggerFor]="newWorld">
+              EA Games
+            </button></a
+          >
         </mat-menu>
 
         <mat-menu #wow="matMenu" class="chooseGameNestedButton">
-          <button mat-menu-item [matMenuTriggerFor]="wowRetail">
-            <a routerLink="wow-retail">WoW Retail</a>
-          </button>
-          <button mat-menu-item [matMenuTriggerFor]="wowClassic">
-            WoW Classic
-          </button>
+          <a routerLink="wow-retail"
+            ><button mat-menu-item [matMenuTriggerFor]="wowRetail">
+              WoW Retail
+            </button></a
+          >
+          <a routerLink="#">
+            ><button mat-menu-item [matMenuTriggerFor]="wowClassic">
+              WoW Classic
+            </button></a
+          >
         </mat-menu>
 
         <mat-menu #newWorld="matMenu" class="chooseGameNestedButton">
-          <button mat-menu-item>Taler</button>
+          <a routerLink="#"><button mat-menu-item>Taler</button></a>
         </mat-menu>
 
         <mat-menu #wowRetail="matMenu" class="chooseGameNestedButton">
-          <button mat-menu-item>Gold</button>
+          <a routerLink="#"><button mat-menu-item>Gold</button></a>
         </mat-menu>
 
         <mat-menu #wowClassic="matMenu" class="chooseGameNestedButton">
-          <button mat-menu-item>Gold</button>
+          <a routerLink="#"><button mat-menu-item>Gold</button></a>
         </mat-menu>
       </div>
 

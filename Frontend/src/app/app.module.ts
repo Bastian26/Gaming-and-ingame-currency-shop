@@ -11,6 +11,10 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { WowRetailComponent } from './components/wow-retail/wow-retail.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
+import { HelpPageComponent } from './components/help-page/help-page.component';
+import { AccountComponent } from './components/account/account.component';
+import { AboutComponent } from './components/about/about.component';
+import { PaymentOptionsComponent } from './components/payment-options/payment-options.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +23,10 @@ import { MainPageComponent } from './components/main-page/main-page.component';
     WowOverviewComponent,
     WowRetailComponent,
     MainPageComponent,
+    HelpPageComponent,
+    AccountComponent,
+    AboutComponent,
+    PaymentOptionsComponent,
   ],
   imports: [
     BrowserModule,
