@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  height: 10%;
+  height: 15.4%;
   z-index: 2;
 
   .header-top {
@@ -42,8 +42,6 @@
 
   .header-bottom {
     max-height: 40px;
-    position: sticky;
-    top: 0;
     width: 100%;
     border-top: 1px solid rgba(222, 222, 222, 0.5);
     background-color: #272728;
