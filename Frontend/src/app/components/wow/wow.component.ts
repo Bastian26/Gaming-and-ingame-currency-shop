@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-wow',
@@ -21,11 +21,6 @@ export class WowComponent implements OnInit {
 
   ngOnInit(): void {
     this.setActiveLink();
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        this.setActiveLink();
-      }
-    });
   }
 
   setActiveLink() {
@@ -33,10 +28,5 @@ export class WowComponent implements OnInit {
     this.navbarLinks.forEach((link) => {
       link.active = currentUrl.includes(link.url);
     });
-  }
-
-  setActive(link: any) {
-    this.navbarLinks.forEach((link) => (link.active = false));
-    link.active = true;
   }
 }
