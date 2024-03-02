@@ -1,0 +1,36 @@
+.wow-gold-main-page {
+  margin-left: 10%;
+  width: 90%;
+  height: 84vh;
+  background-image: url("./../../../../assets/img/DragonflightMainImg.jpg");
+  /* Hintergrundbildgröße */
+  background-size: cover;
+  /* Hintergrundbildposition */
+  background-position: center;
+  /* Hintergrundbildwiederholung */
+  background-repeat: no-repeat;
+  /* Hintergrundfarbe, falls das Bild nicht geladen werden kann */
+  background-color: #666161;
+  position: relative; /* Positionierung des Elternelements */
+  z-index: 0;
+}
+
+.wow-gold-main-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 84vh;
+  background: linear-gradient(
+    to bottom,
+    rgba(121, 120, 120, 0.6) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  z-index: -1;
+}
+
+.wow-gold-main-page-content-wrapper {
+  z-index: 2;
+}

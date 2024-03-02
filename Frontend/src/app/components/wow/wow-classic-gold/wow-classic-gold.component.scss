@@ -1,28 +1,8 @@
-.wow-retail-wrapper {
-  position: relative;
-}
-
-nav {
-  position: absolute;
-  width: 10%;
-  height: 84vh;
-  /* Fallback für ältere Browser */
-  background-color: #20112b;
-  /* Verlauf für moderne Browser */
-  background-image: linear-gradient(
-    89.96deg,
-    rgba(86, 79, 255, 0.44) 0.24%,
-    rgba(86, 79, 255, 0.106) 99.69%
-  );
-  background: rgb(5, 6, 34);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 1);
-}
-
-.wow-gold-main-page {
+.wow-classic-gold-main-page {
   margin-left: 10%;
   width: 90%;
   height: 84vh;
-  background-image: url("./../../../assets/img/DragonflightMainImg.jpg");
+  background-image: url("./../../../../assets/img/ClassicMainImg.jpg");
   /* Hintergrundbildgröße */
   background-size: cover;
   /* Hintergrundbildposition */
@@ -30,12 +10,12 @@ nav {
   /* Hintergrundbildwiederholung */
   background-repeat: no-repeat;
   /* Hintergrundfarbe, falls das Bild nicht geladen werden kann */
-  background-color: #f0f0f0;
+  background-color: #666161;
   position: relative; /* Positionierung des Elternelements */
   z-index: 0;
 }
 
-.wow-gold-main-page::before {
+.wow-classic-gold-main-page:before {
   content: "";
   position: absolute;
   top: 0;
@@ -45,12 +25,13 @@ nav {
   background: linear-gradient(
     to bottom,
     rgba(121, 120, 120, 0.6) 0%,
-    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.75) 50%,
+    rgba(0, 0, 0, 1) 80%,
     rgba(0, 0, 0, 1) 100%
   );
   z-index: -1;
 }
 
-.test {
+.wow-gold-main-page-content-wrapper {
   z-index: 2;
 }

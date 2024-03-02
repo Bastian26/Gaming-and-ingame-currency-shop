@@ -9,24 +9,28 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import { WowRetailComponent } from './components/wow-retail/wow-retail.component';
+import { WowComponent } from './components/wow/wow.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { HelpPageComponent } from './components/help-page/help-page.component';
 import { AccountComponent } from './components/account/account.component';
 import { AboutComponent } from './components/about/about.component';
 import { PaymentOptionsComponent } from './components/payment-options/payment-options.component';
+import { WowRetailGoldComponent } from './components/wow/wow-retail-gold/wow-retail-gold.component';
+import { WowClassicGoldComponent } from './components/wow/wow-classic-gold/wow-classic-gold.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     WowOverviewComponent,
-    WowRetailComponent,
+    WowComponent,
     MainPageComponent,
     HelpPageComponent,
     AccountComponent,
     AboutComponent,
     PaymentOptionsComponent,
+    WowRetailGoldComponent,
+    WowClassicGoldComponent,
   ],
   imports: [
     BrowserModule,

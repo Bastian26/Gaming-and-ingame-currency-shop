@@ -29,7 +29,7 @@
         </button>
 
         <mat-menu #games="matMenu" class="chooseGameNestedButton">
-          <a routerLink="wow"
+          <a routerLink="wow-overview"
             ><button mat-menu-item [matMenuTriggerFor]="wow">WoW</button></a
           >
           <a routerLink="#"
@@ -55,14 +55,14 @@
         </mat-menu>
 
         <mat-menu #wow="matMenu" class="chooseGameNestedButton">
-          <a routerLink="wow-retail"
+          <a routerLink="/wow/retail-gold"
             ><button mat-menu-item [matMenuTriggerFor]="wowRetail">
-              WoW Retail
+              WoW Retail Gold
             </button>
           </a>
-          <a routerLink="#">
+          <a routerLink="/wow/classic-gold">
             ><button mat-menu-item [matMenuTriggerFor]="wowClassic">
-              WoW Classic
+              WoW Classic Gold
             </button>
           </a>
         </mat-menu>

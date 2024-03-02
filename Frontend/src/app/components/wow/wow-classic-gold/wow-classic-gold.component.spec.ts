@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WowRetailComponent } from './wow-retail.component';
+import { WowClassicGoldComponent } from './wow-classic-gold.component';
 
-describe('WowRetailComponent', () => {
-  let component: WowRetailComponent;
-  let fixture: ComponentFixture<WowRetailComponent>;
+describe('WowClassicGoldComponent', () => {
+  let component: WowClassicGoldComponent;
+  let fixture: ComponentFixture<WowClassicGoldComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ WowRetailComponent ]
+      declarations: [ WowClassicGoldComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(WowRetailComponent);
+    fixture = TestBed.createComponent(WowClassicGoldComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
