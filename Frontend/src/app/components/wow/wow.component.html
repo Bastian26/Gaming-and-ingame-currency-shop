@@ -4,7 +4,7 @@
       [href]="link.url"
       *ngFor="let link of navbarLinks"
       [ngClass]="{ 'active-element': link.active }"
-      (click)="setActive(link)"
+      (click)="setActiveLink(link)"
     >
       <span>{{ link.label }}</span>
     </a>

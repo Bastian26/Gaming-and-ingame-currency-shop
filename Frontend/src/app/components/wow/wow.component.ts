@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-wow',
@@ -16,14 +17,26 @@ export class WowComponent implements OnInit {
     { label: 'Coaching', url: '#', active: false },
   ];
 
-  constructor() {}
+  constructor(private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.setActiveLink();
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.setActiveLink();
+      }
+    });
+  }
+
+  setActiveLink() {
+    const currentUrl = this.router.url;
+    this.navbarLinks.forEach((link) => {
+      link.active = currentUrl.includes(link.url);
+    });
+  }
 
   setActive(link: any) {
-    // Setze alle Links auf inaktiv
     this.navbarLinks.forEach((link) => (link.active = false));
-    // Setze den ausgewählten Link auf aktiv
     link.active = true;
   }
 }
