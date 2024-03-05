@@ -1,5 +1,5 @@
 <div class="wow-wrapper">
-  <nav>
+  <aside>
     <a
       [href]="link.url"
       *ngFor="let link of navbarLinks"
@@ -8,6 +8,6 @@
     >
       <span>{{ link.label }}</span>
     </a>
-  </nav>
+  </aside>
   <router-outlet></router-outlet>
 </div>

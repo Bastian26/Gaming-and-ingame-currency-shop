@@ -13,6 +13,8 @@
   background-color: #666161;
   position: relative; /* Positionierung des Elternelements */
   z-index: 0;
+  display: flex;
+  align-items: baseline;
 }
 
 .wow-classic-gold-main-page:before {
@@ -33,5 +35,37 @@
 }
 
 .wow-gold-main-page-content-wrapper {
+  color: rgb(217, 217, 227);
   z-index: 2;
+  background-color: rgba(42, 42, 75, 0.66);
+  width: 75%;
+  height: 600px;
+  padding: 15px;
+  margin: 20px auto auto;
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+  }
+
+  .location-path {
+    color: darkgrey;
+  }
+
+  .gold-classic-paragraph {
+    margin-top: 30px;
+    font-size: 0.9rem;
+  }
+
+  .scam-notification {
+    font-size: 0.75rem;
+    padding: 7px 7px 7px 12px;
+    background-color: rgba(96, 28, 28, 0.76);
+  }
+
+  .offers {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 550;
+  }
 }
