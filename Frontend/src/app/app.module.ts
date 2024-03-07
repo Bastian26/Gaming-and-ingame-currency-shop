@@ -18,6 +18,8 @@ import { PaymentOptionsComponent } from './components/payment-options/payment-op
 import { WowRetailGoldComponent } from './components/wow/wow-retail-gold/wow-retail-gold.component';
 import { WowClassicGoldComponent } from './components/wow/wow-classic-gold/wow-classic-gold.component';
 import { WowGoldOfferComponent } from './components/wow/wow-gold-offer/wow-gold-offer.component';
+import { LoginPageComponent } from './components/account/login-page/login-page.component';
+import { AccountDetailsComponent } from './components/account/account-details/account-details.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { WowGoldOfferComponent } from './components/wow/wow-gold-offer/wow-gold-
     WowRetailGoldComponent,
     WowClassicGoldComponent,
     WowGoldOfferComponent,
+    LoginPageComponent,
+    AccountDetailsComponent,
   ],
   imports: [
     BrowserModule,
