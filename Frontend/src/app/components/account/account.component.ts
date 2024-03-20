@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginPageComponent } from '../../components/account/login-page/login-page.component';
 
 @Component({
   selector: 'app-account',
