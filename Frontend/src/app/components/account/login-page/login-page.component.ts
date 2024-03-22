@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AxiosService} from "../../../services/axios.service";
 
 @Component({
   selector: 'app-login-page',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPageComponent implements OnInit {
 
-  constructor() { }
+  data: string[] = [];
+
+  // service injection belongs into the constructor
+  constructor(private axiosService: AxiosService) { }
 
   ngOnInit(): void {
+    // full url not necessary because base url already is in service
+    this.axiosService.request(
+      "GET",
+      "/messages",
+      {}
+    ).then(
+      (response) => this.data = response.data
+    );
   }
 
 }

@@ -28,10 +28,6 @@ const routes: Routes = [
   { path: 'account', component: AccountComponent },
   { path: 'payment-options', component: PaymentOptionsComponent },
   { path: 'help', component: HelpPageComponent },
-  /* { path: 'about', component: AboutComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', component: PageNotFoundComponent }, */
 ];
 
 @NgModule({

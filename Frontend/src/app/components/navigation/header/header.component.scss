@@ -68,6 +68,11 @@
           padding: 0;
         }
 
+        &:visited {
+          color: inherit;
+          text-decoration: none;
+        }
+
         .showAllGamesDropDownBtn {
           background-color: #272728;
           color: white;
