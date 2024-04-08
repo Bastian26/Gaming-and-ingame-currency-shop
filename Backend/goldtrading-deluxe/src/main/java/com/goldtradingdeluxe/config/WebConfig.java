@@ -18,7 +18,7 @@ import java.util.Arrays;
 public class WebConfig {
 
     @Bean
-    public FilterRegistrationBean corsFilter() {
+    public CorsFilter corsFilter() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
@@ -36,9 +36,9 @@ public class WebConfig {
         ));
         config.setMaxAge(3600L);
         source.registerCorsConfiguration("/**", config);
-        FilterRegistrationBean bean = new FilterRegistrationBean(new CorsFilter(source));
-        // Set bean at lowest position to get executed before all other beans
-        bean.setOrder(-102);
+        CorsFilter bean = new CorsFilter(source);
+//        Set bean at lowest position to get executed before all other beans
+//        bean.setOrder(-102);
         return bean;
     }
 }

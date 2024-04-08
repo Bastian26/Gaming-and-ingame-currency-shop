@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class PasswordConfig {
 
+    // Necessary to not store passwords in plain text - BCrypt is a good option
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
