@@ -7,13 +7,36 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 })
 export class LoginFormComponent implements OnInit {
 
+  // @Output Moves Content in the parent elements
   @Output() onSubmitLoginEvent = new EventEmitter();
+  @Output() onSubmitRegisterEvent = new EventEmitter();
 
+  active: string = "login";
+  firstName: string = "";
+  lastName: string = "";
   login: string = "";
   password: string = "";
 
+  // Method to switch between the forms
+  onLoginTab(): void {
+    this.active = "login";
+  }
+
+  onRegisterTab(): void {
+    this.active = "register";
+  }
+
   onSubmitLogin(): void {
     this.onSubmitLoginEvent.emit({"login": this.login, "password": this.password})
+  }
+
+  onSubmitRegister(): void {
+    this.onSubmitRegisterEvent.emit({
+      "firstName": this.firstName,
+      "lastName": this.lastName,
+      "login": this.login,
+      "password": this.password
+    })
   }
 
   constructor() { }
