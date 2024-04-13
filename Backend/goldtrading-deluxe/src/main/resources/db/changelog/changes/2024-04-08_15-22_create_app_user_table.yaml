@@ -3,9 +3,13 @@ databaseChangeLog:
       id: 2024-04-08_15-22_create_user_table
       author: bastian
       comment: create app_user entity table
+      preConditions:
+        onFail: MARK_RAN
+        not:
+          - tableExists:
+              tableName: app_user
       changes:
         - createTable:
-            ifNotExists: true
             tableName: app_user
             columns:
               - column:

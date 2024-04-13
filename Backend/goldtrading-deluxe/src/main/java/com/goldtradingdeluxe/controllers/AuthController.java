@@ -1,6 +1,7 @@
 package com.goldtradingdeluxe.controllers;
 
 import com.goldtradingdeluxe.dto.CredentialDto;
+import com.goldtradingdeluxe.dto.SignUpDto;
 import com.goldtradingdeluxe.dto.UserDto;
 import com.goldtradingdeluxe.services.UserService;
 import lombok.RequiredArgsConstructor;

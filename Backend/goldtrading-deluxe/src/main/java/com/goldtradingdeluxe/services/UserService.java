@@ -1,6 +1,7 @@
 package com.goldtradingdeluxe.services;
 
 import com.goldtradingdeluxe.dto.CredentialDto;
+import com.goldtradingdeluxe.dto.SignUpDto;
 import com.goldtradingdeluxe.dto.UserDto;
 import com.goldtradingdeluxe.entities.User;
 import com.goldtradingdeluxe.exceptions.AppException;
@@ -11,6 +12,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.nio.CharBuffer;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -33,5 +35,18 @@ public class UserService {
             return userMapper.toUserDto(user);
         }
         throw new AppException("Invalid password", HttpStatus.BAD_REQUEST);
+    }
+
+    public UserDto register(SignUpDto signUpDto) {
+        Optional<User> oUser = userRepository.findByLogin(signUpDto.login());
+
+        if (oUser.isPresent()) {
+            throw new AppException("Login already exists", HttpStatus.BAD_REQUEST);
+        }
+
+        User user = userMapper.signUpToUser(signUpDto);
+        user.setPassword(passwordEncoder.encode(CharBuffer.wrap(signUpDto.password())));
+        User savedUser = userRepository.save(user);
+        return userMapper.toUserDto(savedUser);
     }
 }
