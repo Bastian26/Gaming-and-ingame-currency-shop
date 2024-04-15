@@ -25,6 +25,7 @@ import { AuthContentComponent } from './components/auth-content/auth-content/aut
 import { WelcomeContentComponent } from './components/account/welcome-content/welcome-content.component';
 import { LoginFormComponent } from './components/account/login-form/login-form.component';
 import { ContentComponent } from './components/account/content/content.component';
+import { ButtonsComponent } from './components/buttons/buttons.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { ContentComponent } from './components/account/content/content.component
     WelcomeContentComponent,
     LoginFormComponent,
     ContentComponent,
+    ButtonsComponent,
   ],
   imports: [
     BrowserModule,

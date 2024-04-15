@@ -5,7 +5,6 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
 import org. springframework.http.HttpHeaders;
@@ -27,6 +26,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         String header = request.getHeader(HttpHeaders.AUTHORIZATION);
 
         if (header != null) {
+            // Example: Auth-http-header: Authorization: Bearer[0] eyJhbGciOiJIUzI1N... [1]
             String[] authElements = header.split(" ");
 
             if (authElements.length == 2 && "Bearer".equals(authElements[0])) {
