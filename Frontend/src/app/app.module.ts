@@ -26,6 +26,7 @@ import { WelcomeContentComponent } from './components/account/welcome-content/we
 import { LoginFormComponent } from './components/account/login-form/login-form.component';
 import { ContentComponent } from './components/account/content/content.component';
 import { ButtonsComponent } from './components/buttons/buttons.component';
+import { SwitcherTabComponent } from './components/wow/switcher-tab/switcher-tab.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { ButtonsComponent } from './components/buttons/buttons.component';
     LoginFormComponent,
     ContentComponent,
     ButtonsComponent,
+    SwitcherTabComponent,
   ],
   imports: [
     BrowserModule,

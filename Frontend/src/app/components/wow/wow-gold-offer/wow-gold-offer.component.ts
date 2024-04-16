@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./wow-gold-offer.component.scss']
 })
 export class WowGoldOfferComponent implements OnInit {
+  servers: string[] = ["EU", "US"];
+  fractions: string[] = ["Alliance", "Horde"]
 
   constructor() { }
 

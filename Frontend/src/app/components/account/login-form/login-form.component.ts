@@ -14,7 +14,7 @@ export class LoginFormComponent implements OnInit {
   active: string = "login";
   firstName: string = "";
   lastName: string = "";
-  login: string = "";
+  userName: string = "";
   password: string = "";
 
   // Method to switch between the forms
@@ -27,14 +27,14 @@ export class LoginFormComponent implements OnInit {
   }
 
   onSubmitLogin(): void {
-    this.onSubmitLoginEvent.emit({"login": this.login, "password": this.password})
+    this.onSubmitLoginEvent.emit({"login": this.userName, "password": this.password})
   }
 
   onSubmitRegister(): void {
     this.onSubmitRegisterEvent.emit({
       "firstName": this.firstName,
       "lastName": this.lastName,
-      "login": this.login,
+      "userName": this.userName,
       "password": this.password
     })
   }

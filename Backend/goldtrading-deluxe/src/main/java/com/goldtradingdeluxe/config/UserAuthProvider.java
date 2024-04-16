@@ -51,7 +51,7 @@ public class UserAuthProvider {
         DecodedJWT decodedJWT = verifier.verify(token);
 
         UserDto user = UserDto.builder()
-                .login(decodedJWT.getIssuer())
+                .userName(decodedJWT.getIssuer())
                 .firstName(decodedJWT.getClaim("firstName").asString())
                 .lastName(decodedJWT.getClaim("lastName").asString())
                 .build();
