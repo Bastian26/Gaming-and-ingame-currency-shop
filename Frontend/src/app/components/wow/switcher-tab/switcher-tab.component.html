@@ -1,0 +1,12 @@
+<div class="switcher-tabs">
+  <div class="switcher-tab-item"
+       [ngClass]="{'active': activeElement === providedContentElements[0]}"
+       (click)="setActiveElement(providedContentElements[0])">
+    {{ providedContentElements[0].toUpperCase() }}
+  </div>
+  <div class="switcher-tab-item"
+       [ngClass]="{'active': activeElement === providedContentElements[1]}"
+       (click)="setActiveElement(providedContentElements[1])">
+    {{ providedContentElements[1].toUpperCase() }}
+  </div>
+</div>
