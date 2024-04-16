@@ -37,7 +37,7 @@ public class UserAuthProvider {
         Date validity = new Date(now.getTime() + 36_000_000);
 
         return JWT.create()
-                .withIssuer(userDto.getLogin())
+                .withIssuer(userDto.getUserName())
                 .withIssuedAt(now)
                 .withExpiresAt(validity)
                 .withClaim("firstName", userDto.getFirstName())

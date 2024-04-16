@@ -20,8 +20,6 @@ const routes: Routes = [
       //{ path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'retail-gold', component: WowRetailGoldComponent },
       { path: 'classic-gold', component: WowClassicGoldComponent },
-      //{ path: 'about', component: AboutComponent },
-      //{ path: 'contact', component: ContactComponent },
     ],
   },
   { path: 'about', component: AboutComponent },

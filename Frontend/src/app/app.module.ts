@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatMenuModule } from '@angular/material/menu';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/navigation/header/header.component';
+import { HeaderComponent } from './components/header/header.component';
 import { WowOverviewComponent } from './components/wow-overview/wow-overview.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -21,11 +21,9 @@ import { WowClassicGoldComponent } from './components/wow/wow-classic-gold/wow-c
 import { WowGoldOfferComponent } from './components/wow/wow-gold-offer/wow-gold-offer.component';
 import { LoginPageComponent } from './components/account/login-page/login-page.component';
 import { AccountDetailsComponent } from './components/account/account-details/account-details.component';
-import { AuthContentComponent } from './components/auth-content/auth-content/auth-content.component';
 import { WelcomeContentComponent } from './components/account/welcome-content/welcome-content.component';
 import { LoginFormComponent } from './components/account/login-form/login-form.component';
-import { ContentComponent } from './components/account/content/content.component';
-import { ButtonsComponent } from './components/buttons/buttons.component';
+import { ButtonsComponent } from './components/account/buttons/buttons.component';
 import { SwitcherTabComponent } from './components/wow/switcher-tab/switcher-tab.component';
 
 @NgModule({
@@ -44,10 +42,8 @@ import { SwitcherTabComponent } from './components/wow/switcher-tab/switcher-tab
     WowGoldOfferComponent,
     LoginPageComponent,
     AccountDetailsComponent,
-    AuthContentComponent,
     WelcomeContentComponent,
     LoginFormComponent,
-    ContentComponent,
     ButtonsComponent,
     SwitcherTabComponent,
   ],
