@@ -27,7 +27,7 @@ public class UserService {
     }
 
     public UserDto login(CredentialDto credentialDto) {
-        User user = userRepository.findByLogin(credentialDto.login())
+        User user = userRepository.findByUserName(credentialDto.userName())
                 .orElseThrow(() -> new AppException("Unknown User", HttpStatus.NOT_FOUND));
 
         if (passwordEncoder.matches(CharBuffer.wrap(credentialDto.password()),
@@ -38,7 +38,7 @@ public class UserService {
     }
 
     public UserDto register(SignUpDto signUpDto) {
-        Optional<User> oUser = userRepository.findByLogin(signUpDto.login());
+        Optional<User> oUser = userRepository.findByUserName(signUpDto.userName());
 
         if (oUser.isPresent()) {
             throw new AppException("Login already exists", HttpStatus.BAD_REQUEST);

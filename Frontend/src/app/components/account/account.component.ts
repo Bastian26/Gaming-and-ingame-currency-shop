@@ -28,7 +28,7 @@ export class AccountComponent implements OnInit {
       "POST",
       "/login",
       {
-        login: input.login,
+        userName: input.userName,
         password: input.password
       }
     ).then(response => {
@@ -44,7 +44,7 @@ export class AccountComponent implements OnInit {
       {
         firstName: input.firstName,
         lastName: input.lastName,
-        login: input.login,
+        userName: input.userName,
         password: input.password
       }
     ).then(response => {

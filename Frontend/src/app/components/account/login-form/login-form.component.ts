@@ -27,7 +27,7 @@ export class LoginFormComponent implements OnInit {
   }
 
   onSubmitLogin(): void {
-    this.onSubmitLoginEvent.emit({"login": this.userName, "password": this.password})
+    this.onSubmitLoginEvent.emit({"userName": this.userName, "password": this.password})
   }
 
   onSubmitRegister(): void {
