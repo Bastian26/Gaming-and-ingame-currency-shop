@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./wow-classic-gold.component.scss']
 })
 export class WowClassicGoldComponent implements OnInit {
-  offers: number = 9200;
+  offers: number = 120;
 
   constructor() { }
 
