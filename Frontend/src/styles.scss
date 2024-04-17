@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~flag-icon-css/css/flag-icons.css";
+@import "~bootstrap/scss/bootstrap";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 html,
 body {
@@ -7,12 +10,8 @@ body {
   box-sizing: border-box;
   font-size: 16px;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-
-  & > div {
-    height: 0;
-  }
 }
 
-/* Importing Bootstrap SCSS file. */
-@import "~bootstrap/scss/bootstrap";
 
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

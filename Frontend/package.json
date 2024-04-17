@@ -25,6 +25,7 @@
     "@popperjs/core": "^2.11.8",
     "axios": "^1.6.8",
     "bootstrap": "^5.3.3",
+    "flag-icon-css": "^4.1.7",
     "ngx-flag-picker": "^14.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

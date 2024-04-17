@@ -9,6 +9,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { MatSelectModule } from "@angular/material/select";
+import { MatInputModule } from '@angular/material/input';
 
 import { WowComponent } from './components/wow/wow.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
@@ -55,6 +57,8 @@ import { SwitcherTabComponent } from './components/wow/switcher-tab/switcher-tab
     MatIconModule,
     FormsModule,
     AppRoutingModule,
+    MatSelectModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
