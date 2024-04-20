@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginPageComponent } from '../../components/account/login-page/login-page.component';
 import {AxiosService} from "../../services/axios.service";
+import { User } from '../../models/user'
+import {dateComparator} from "@ng-bootstrap/ng-bootstrap/datepicker/datepicker-tools";
 
 @Component({
   selector: 'app-account',
@@ -34,7 +36,25 @@ export class AccountComponent implements OnInit {
     ).then(response => {
       this.axiosService.setAuthToken(response.data.token);
       this.componentToShow = "messages";
-    })
+
+      if (response.data !== null) {
+        const newUser: User = {
+          id: response.data.id,
+          firstName: response.data.firstName,
+          lastName: response.data.lastName,
+          userName: response.data.userName,
+          token: response.data.token
+        };
+
+        // store in rxjs store
+
+      }
+    }).catch(error => {
+      // Fehlerbehandlung
+      console.error("Fehler beim Registrieren:", error);
+      // Hier kannst du eine Fehlermeldung an die UI senden
+      this.showErrorToUser("Es ist ein Fehler beim Registrieren aufgetreten. Bitte versuchen Sie es erneut.");
+    });
   }
 
   onRegister(input: any): void {
@@ -50,7 +70,17 @@ export class AccountComponent implements OnInit {
     ).then(response => {
       this.axiosService.setAuthToken(response.data.token);
       this.componentToShow = "messages";
-    })
+    }).catch(error => {
+      // Fehlerbehandlung
+      console.error("Fehler beim Registrieren:", error);
+      // Hier kannst du eine Fehlermeldung an die UI senden
+      this.showErrorToUser("Es ist ein Fehler beim Registrieren aufgetreten. Bitte versuchen Sie es erneut.");
+    });
+  }
+
+  showErrorToUser(message: string): void {
+    // Hier implementierst du die Logik, um die Fehlermeldung in der UI anzuzeigen
+    // Zum Beispiel kannst du eine Fehlermeldung in einem Fehlerbanner anzeigen oder ein Modalfenster öffnen
   }
 
 }

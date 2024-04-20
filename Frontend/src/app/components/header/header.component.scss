@@ -51,33 +51,112 @@
       display: flex;
       justify-content: flex-end;
 
-      .language-menu-wrapper {
-        margin-top: 40px;
+      .language-picker {
+        position: relative;
+        width: 11%;
         height: 2.3rem;
         background: rgb(237, 237, 237);
-        width: fit-content;
-        padding: 0 10px 0 10px;
+        margin: 40px 10px 0 0;
+        padding: 5px;
         border-radius: 5px;
+        color: black;
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.3rem;
+        cursor: pointer;
+      }
 
-        mat-form-field {
-          width: 100px;
-        }
+      .language-picker ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 2.3rem;
+        position: absolute;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        top: calc(100% + 3px); /* Aligns the element on the bottom position of .language-picker (100% is height from parent)*/
+        left: 0; /* align element at the left of.language-picker-Elements */
 
-        ::ng-deep .mat-focused .mat-form-field-label {
-          /*change color of label*/
-          color: #5F73FA !important;
-        }
+        .language-item {
+          padding: 5px;
+          width: 100%;
+          height: 2.3rem;
+          border-bottom: 1px solid rgba(50, 50, 50, 0.4);
+          background-color: rgb(237, 237, 237);
+          color: rgb(50, 50, 50);
+          display: flex;
+          justify-content: space-between;
 
-        ::ng-deep.mat-form-field-underline {
-          /*change color of underline*/
-          background-color: #171E26 !important;
-        }
+          .language-name {
+            margin: 3.7px 3px 0 0px;
+            font-size: 1.2rem;
+            font-weight: 530;
+          }
 
-        ::ng-deep.mat-form-field-ripple {
-          /*change color of underline when focused*/
-          background-color: #F1C400 !important;
+          .arrow-icon {
+            font-size: 1.6rem;
+          }
         }
       }
+
+
+
+      //.language-picker {
+      //  width: 100px;
+      //  height: 2.3rem;
+      //  background: rgb(237, 237, 237);
+      //  margin-top: 40px;
+      //  padding: 5px;
+      //  border-radius: 5px;
+      //  color: black;
+      //  display: flex;
+      //  justify-content: space-between;
+      //  font-size: 1.3rem;
+      //
+      //  .arrow-icon {
+      //    font-size: 1.6rem;
+      //  }
+      //
+      //  list-style-type: none;
+      //  padding: 0;
+      //  margin: 0;
+      //  position: absolute;
+      //  background-color: white;
+      //  border-radius: 5px;
+      //  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      //  z-index: 1; /* Ensure the dropdown menu is on top of other elements */
+      //}
+
+      //mat-form-field {
+      //  width: 150px;
+      //  border-radius: 5px;
+      //  font-size: 0.1rem;
+
+      //margin-top: 40px;
+      //height: 2.3rem;
+      //background: rgb(237, 237, 237);
+      //width: fit-content;
+      //padding: 0 10px 0 10px;
+      //border-radius: 5px;
+
+      //::ng-deep .mat-focused .mat-form-field-label {
+      //  /*change color of label*/
+      //  color: #5F73FA !important;
+      //}
+      //
+      //::ng-deep.mat-form-field-underline {
+      //  /*change color of underline*/
+      //  background-color: #171E26 !important;
+      //}
+      //
+      //::ng-deep.mat-form-field-ripple {
+      //  /*change color of underline when focused*/
+      //  background-color: #F1C400 !important;
+      //}
+    //}
     }
   }
 
@@ -145,16 +224,23 @@
 }
 
 ::ng-deep .chooseGameNestedButton {
-  margin-top: 0.1rem;
-  width: 44rem;
-  background-color: #565657;
+  margin-top: 0.035rem;
+  width: 46rem;
+
+  & > * {
+    background-color: #273544;
+  }
 
   a {
-    text-decoration: none;
+    color: transparent;
   }
 
-  a * {
-    text-decoration: none;
-    color: #fff;
+  a > button {
+    color: rgb(217, 217, 227);;
+
   }
+}
+
+::ng-deep .mat-form-field:nth-child(1) {
+  background: #5F73FA;
 }

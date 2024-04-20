@@ -1,0 +1,13 @@
+.nav-tabs {
+  margin-bottom: 1rem;
+  border-bottom: 0;
+
+  .nav-item {
+    display: flex;
+    align-items: flex-start;
+
+    &:nth-child(2) {
+      margin-left: 1rem;
+    }
+  }
+}

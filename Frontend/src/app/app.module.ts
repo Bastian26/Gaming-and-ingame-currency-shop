@@ -11,6 +11,8 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { MatSelectModule } from "@angular/material/select";
 import { MatInputModule } from '@angular/material/input';
+import { StoreModule } from "@ngrx/store";
+import { reducers } from './store/rootReducer';
 
 import { WowComponent } from './components/wow/wow.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
@@ -27,6 +29,7 @@ import { WelcomeContentComponent } from './components/account/welcome-content/we
 import { LoginFormComponent } from './components/account/login-form/login-form.component';
 import { ButtonsComponent } from './components/account/buttons/buttons.component';
 import { SwitcherTabComponent } from './components/wow/switcher-tab/switcher-tab.component';
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -48,17 +51,20 @@ import { SwitcherTabComponent } from './components/wow/switcher-tab/switcher-tab
     LoginFormComponent,
     ButtonsComponent,
     SwitcherTabComponent,
+
   ],
   imports: [
+    AppRoutingModule,
+    MatSelectModule,
+    MatInputModule,
     BrowserModule,
     MatMenuModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatIconModule,
     FormsModule,
-    AppRoutingModule,
-    MatSelectModule,
-    MatInputModule,
+    CommonModule,
+    StoreModule.forRoot(reducers)
   ],
   providers: [],
   bootstrap: [AppComponent],

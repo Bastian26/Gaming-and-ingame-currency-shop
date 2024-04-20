@@ -9,11 +9,12 @@ export class HeaderComponent implements OnInit {
   searchTerm = '';
 
   languages = [
-    {name: 'English', code: 'US'},
-    {name: 'Deutsch', code: 'DE'}
+    {name: 'DE', code: 'DE'},
+    {name: 'EN', code: 'GB'},
   ];
 
   selectedLanguage: { name: string, code: string };
+  isOpen: boolean = false;
 
   constructor() {
     this.selectedLanguage = this.languages[0];
@@ -23,7 +24,10 @@ export class HeaderComponent implements OnInit {
 
   onSelectLanguage(language: { name: string, code: string }) {
     this.selectedLanguage = language;
-    // Hier kannst du die ausgewählte Sprache verwenden oder weitere Aktionen ausführen
+  }
+
+  toggleDropdown() {
+    this.isOpen = !this.isOpen;
   }
 
 }

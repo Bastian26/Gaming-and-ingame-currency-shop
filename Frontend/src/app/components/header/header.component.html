@@ -19,15 +19,30 @@
       </div>
     </div>
     <div class="right-header-part">
-      <div class="language-menu-wrapper">
-        <mat-form-field>
-          <mat-label>Language</mat-label>
-          <mat-select (selectionChange)="onSelectLanguage($event.value)">
-            <mat-option *ngFor="let language of languages" [value]="language">
-              <span class="flag-icon flag-icon-{{language.code | lowercase}}"></span> {{language.name}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
+<!--      <mat-form-field>-->
+<!--        <mat-label>Language</mat-label>-->
+<!--        <mat-select (selectionChange)="onSelectLanguage($event.value)">-->
+<!--          <mat-option *ngFor="let language of languages" [value]="language">-->
+<!--            <span class="flag-icon flag-icon-{{language.code | lowercase}}"></span> {{language.name}}-->
+<!--          </mat-option>-->
+<!--        </mat-select>-->
+<!--      </mat-form-field>-->
+
+<!--      <select id="countrySelect" class="selectpicker" (change)="onSelectLanguage($event.target.value)">-->
+<!--        <option *ngFor="let language of languages" [value]="language.url"-->
+<!--                [attr.data-content]="'<span class=\'flag-icon flag-icon-' + language.code.toLowerCase() + '\'></span> ' + language.name">-->
+<!--          {{ language.name }}-->
+<!--        </option>-->
+<!--      </select>-->
+      <div class="language-picker" (click)="toggleDropdown()">
+        <span class="current-language flag-icon flag-icon-{{selectedLanguage.code | lowercase}}"></span>
+        <i class="arrow-icon material-icons">keyboard_arrow_{{isOpen === true ? 'left' : 'down'}}</i>
+        <ul *ngIf="isOpen">
+          <li class="language-item" *ngFor="let language of languages" (click)="onSelectLanguage(language)">
+            <span class="flag-icon flag-icon-{{language.code | lowercase}}"></span>
+            <span class="language-name">{{ language.name }}</span>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
