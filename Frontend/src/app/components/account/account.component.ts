@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { LoginPageComponent } from '../../components/account/login-page/login-page.component';
 import {AxiosService} from "../../services/axios.service";
 import { User } from '../../models/user'
-import {dateComparator} from "@ng-bootstrap/ng-bootstrap/datepicker/datepicker-tools";
 
 @Component({
   selector: 'app-account',

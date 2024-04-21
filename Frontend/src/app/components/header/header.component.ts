@@ -30,4 +30,8 @@ export class HeaderComponent implements OnInit {
     this.isOpen = !this.isOpen;
   }
 
+  searchForTerm() {
+    console.log(this.searchTerm);
+  }
+
 }

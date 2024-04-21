@@ -1,7 +1,7 @@
 .switcher-tabs {
   display: flex;
   justify-content: flex-start;
-  border: 2px solid #5F73FA;
+  border: 2px solid #6679fa;
   width: fit-content;
   border-radius: 5px;
   padding: 3px;
@@ -10,6 +10,7 @@
     padding: 5px 10px;
     border-radius: 5px;
     font-weight: 550;
+    cursor: pointer;
 
     &:nth-child(2) {
       margin-left: 2px;
@@ -18,5 +19,5 @@
 }
 
 .active {
-  background: #5F73FA;
+  background: #6679fa;
 }

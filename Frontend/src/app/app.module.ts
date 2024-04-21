@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { MatSelectModule } from "@angular/material/select";
 import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 import { StoreModule } from "@ngrx/store";
 import { reducers } from './store/rootReducer';
 
@@ -57,6 +58,7 @@ import {CommonModule} from "@angular/common";
     AppRoutingModule,
     MatSelectModule,
     MatInputModule,
+    MatButtonModule,
     BrowserModule,
     MatMenuModule,
     BrowserAnimationsModule,

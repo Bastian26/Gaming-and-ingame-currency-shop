@@ -12,7 +12,8 @@
       <div class="input-field nopad">
         <input
           type="text"
-          ng-model="search"
+          [(ngModel)]="searchTerm"
+          (keyup.enter)="searchForTerm()"
           class="form-control search"
           placeholder="Suchen..."
         />

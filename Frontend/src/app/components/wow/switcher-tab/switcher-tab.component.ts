@@ -19,5 +19,4 @@ export class SwitcherTabComponent implements OnInit {
   setActiveElement(element: string) {
     this.activeElement = element;
   }
-
 }

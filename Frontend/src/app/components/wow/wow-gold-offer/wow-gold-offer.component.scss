@@ -17,4 +17,20 @@
       color: red;
     }
   }
+
+  .server-menu {
+    background: rgba(#3a3e78, 0.8);
+    border-radius: 5px;
+    margin-left: 15px;
+    color: white;
+    border: 2px solid #6679fa;
+    padding: 0 10px 0 10px;
+    font-weight: 400;
+    font-size: 1rem;
+    cursor: pointer;
+
+    .server-menu-option {
+      padding: 3px 5px 3px 5px;
+    }
+  }
 }
