@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {server} from "../../../models/server";
+import { euClassicServers, euRetailServers, usClassicServers, usRetailServers } from '../../../data/serverList'
 
 @Component({
   selector: 'app-wow-gold-offer',
@@ -10,14 +12,7 @@ export class WowGoldOfferComponent implements OnInit {
   fractions: string[] = ["Alliance", "Horde"]
 
   selectedServer: string;
-  servers: { name: string, value: string } [] = [
-    { name: 'Server', value: 'all' },
-    { name: 'Aegwyn', value: 'aegwyn' },
-    { name: 'Aggmaggan', value: 'aggmaggan' },
-    { name: 'Blackhand', value: 'blackhand' },
-    { name: 'Blackmoore', value: 'blackmoore' },
-    { name: 'Norgannon', value: 'norgannon' }
-  ];
+  servers = euRetailServers;
 
   constructor() { }
 

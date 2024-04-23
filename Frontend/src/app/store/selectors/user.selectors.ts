@@ -9,3 +9,9 @@ export const selectUser = createSelector(
   selectUserState,
   (state: UserState) => state.user
 );
+
+// Selektor für den Login-Status
+export const selectLoggedIn = createSelector(
+  selectUserState,
+  (userState: UserState) => userState.loggedIn
+);
