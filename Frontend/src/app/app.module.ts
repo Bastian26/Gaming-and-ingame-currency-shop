@@ -31,6 +31,9 @@ import { LoginFormComponent } from './components/account/login-form/login-form.c
 import { ButtonsComponent } from './components/account/buttons/buttons.component';
 import { SwitcherTabComponent } from './components/wow/switcher-tab/switcher-tab.component';
 import {CommonModule} from "@angular/common";
+import {StoreDevtoolsModule} from "@ngrx/store-devtools";
+import {environment} from "../environments/environment";
+import {MatProgressSpinner} from "@angular/material/progress-spinner";
 
 @NgModule({
   declarations: [
@@ -66,7 +69,12 @@ import {CommonModule} from "@angular/common";
     MatIconModule,
     FormsModule,
     CommonModule,
-    StoreModule.forRoot(reducers)
+    StoreModule.forRoot(reducers),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+      logOnly: environment.production, // Restrict extension to log-only mode
+    }),
+    MatProgressSpinner,
   ],
   providers: [],
   bootstrap: [AppComponent],

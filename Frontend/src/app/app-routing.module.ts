@@ -17,7 +17,6 @@ const routes: Routes = [
     path: 'wow',
     component: WowComponent,
     children: [
-      //{ path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'retail-gold', component: WowRetailGoldComponent },
       { path: 'classic-gold', component: WowClassicGoldComponent },
     ],

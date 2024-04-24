@@ -23,6 +23,7 @@
     "@angular/router": "^17.3.5",
     "@ng-bootstrap/ng-bootstrap": "^16.0.0",
     "@ngrx/store": "^17.0.0",
+    "@ngrx/store-devtools": "^17.2.0",
     "@popperjs/core": "^2.11.8",
     "axios": "^1.6.8",
     "bootstrap": "^4.6.2",
