@@ -43,6 +43,7 @@ export class AccountComponent implements OnInit {
       this.componentToShow = "account-details";
       this.extractUserFromResponse(response);
     }).catch(error => {
+      this.store.dispatch(LoadingActions.loadingOff());
       console.error("Fehler beim Registrieren:", error);
       this.showErrorToUser("Es ist ein Fehler beim Registrieren aufgetreten. Bitte versuchen Sie es erneut.");
     });
@@ -67,6 +68,7 @@ export class AccountComponent implements OnInit {
       this.componentToShow = "account-details";
       this.extractUserFromResponse(response);
     }).catch(error => {
+      this.store.dispatch(LoadingActions.loadingOff());
       console.error("Fehler beim Registrieren:", error);
       this.showErrorToUser("Es ist ein Fehler beim Registrieren aufgetreten. Bitte versuchen Sie es erneut.");
     });
