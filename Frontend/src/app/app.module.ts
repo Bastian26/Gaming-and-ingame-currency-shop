@@ -14,6 +14,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { StoreModule } from "@ngrx/store";
 import { reducers } from './store/rootReducer';
+import { CommonModule } from "@angular/common";
+import { StoreDevtoolsModule } from "@ngrx/store-devtools";
+import { environment } from "../environments/environment";
+import { MatProgressSpinner } from "@angular/material/progress-spinner";
 
 import { WowComponent } from './components/wow/wow.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
@@ -30,10 +34,7 @@ import { WelcomeContentComponent } from './components/account/welcome-content/we
 import { LoginFormComponent } from './components/account/login-form/login-form.component';
 import { ButtonsComponent } from './components/account/buttons/buttons.component';
 import { SwitcherTabComponent } from './components/wow/switcher-tab/switcher-tab.component';
-import {CommonModule} from "@angular/common";
-import {StoreDevtoolsModule} from "@ngrx/store-devtools";
-import {environment} from "../environments/environment";
-import {MatProgressSpinner} from "@angular/material/progress-spinner";
+import { NgxTranslateModule } from './translate/translate.module';
 
 @NgModule({
   declarations: [
@@ -69,12 +70,13 @@ import {MatProgressSpinner} from "@angular/material/progress-spinner";
     MatIconModule,
     FormsModule,
     CommonModule,
+    NgxTranslateModule,
+    MatProgressSpinner,
     StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode
     }),
-    MatProgressSpinner,
   ],
   providers: [],
   bootstrap: [AppComponent],

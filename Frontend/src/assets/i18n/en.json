@@ -1,0 +1,66 @@
+{
+  "header": {
+    "nav": {
+      "categories": "Categories",
+      "account": "Account",
+      "help": "Help",
+      "payment-options": "Payment Options",
+      "about": "About"
+    }
+  },
+
+  "wow": {
+    "retail": {
+      "gold-message": "Gold in Dragonflight is still the main currency that offers you many opportunities. With gold you can buy mounts, pets, transmog items and most importantly consumables for each content, and even mythic raid gear."
+    },
+    "classic": {
+      "gold-message": "In the world of World of Warcraft (CLASSIC), a popular game worldwide, gold is an important currency that gives you access to all treasures and opportunities. With gold you can equip yourself not only with powerful weapons to face the opponents, but also with the best equipment to protect yourself from all dangers."
+    },
+    "gold-security-hint-message": "GAMEJOY will never ask for gold back. If someone does this, it is a scam.",
+    "offers": "Offers",
+    "fraction": {
+      "horde": "HORDE",
+      "alliance": "ALLIANCE"
+    }
+  },
+
+  "title": "Service feedback for {{company}}",
+  "name": {
+    "label": "Name en",
+    "placeholder": "Enter Name"
+  },
+
+  "gender": {
+    "label": "Gender",
+    "select": "Select gender",
+    "options": {
+      "male": "Male",
+      "female": "Female",
+      "other": "Other"
+    }
+
+  },
+
+  "comment": {
+    "label": "Comment",
+    "placeholder": "Enter Comment"
+  },
+
+  "rating": {
+    "label": "Rate our customer service: ",
+    "options": {
+      "excellent": "Excellent",
+      "good": "Good",
+      "bad": "Bad"
+    }
+  },
+
+  "submit": {
+    "label": "Submit"
+  },
+
+  "requiredErrorMessage": "This is a required field.",
+  "successfulSubmitMessage": "Thanks for your valuable feedback!!!\nThe feedback has been submitted successfully.",
+  "copyright": "All rights reserved. {{currentYear}} {{company}}"
+
+}

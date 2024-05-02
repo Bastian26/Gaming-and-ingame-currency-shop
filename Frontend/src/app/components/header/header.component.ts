@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-header',
@@ -8,15 +9,16 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 export class HeaderComponent implements OnInit {
   searchTerm = '';
 
+  siteLanguage = 'English';
   languages = [
-    {name: 'DE', code: 'DE'},
-    {name: 'EN', code: 'GB'},
+    {name: 'DE', code: 'de'},
+    {name: 'EN', code: 'en'},
   ];
 
   selectedLanguage: { name: string, code: string };
   isOpen: boolean = false;
 
-  constructor() {
+  constructor(private translate: TranslateService) {
     this.selectedLanguage = this.languages[0];
   }
 
@@ -24,6 +26,8 @@ export class HeaderComponent implements OnInit {
 
   onSelectLanguage(language: { name: string, code: string }) {
     this.selectedLanguage = language;
+    this.translate.use(language.code);
+    console.log("changed language to " + this.selectedLanguage.name);
   }
 
   toggleDropdown() {
@@ -33,5 +37,17 @@ export class HeaderComponent implements OnInit {
   searchForTerm() {
     console.log(this.searchTerm);
   }
+
+  // changeSiteLanguage(localeCode: string): void {
+  //   const selectedLanguage = this.languages
+  //     .find((language) => language.code === localeCode)
+  //     ?.name.toString();
+  //   if (selectedLanguage) {
+  //     this.siteLanguage = selectedLanguage;
+  //     this.translate.use(localeCode);
+  //   }
+  //   const currentLanguage = this.translate.currentLang;
+  //   console.log('currentLanguage', currentLanguage);
+  // }
 
 }

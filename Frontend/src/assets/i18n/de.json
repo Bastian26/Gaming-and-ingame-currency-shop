@@ -1,0 +1,66 @@
+{
+
+  "header": {
+    "nav": {
+      "categories": "Kategorien",
+      "account": "Konto",
+      "help": "Hilfe",
+      "payment-options": "Zahlungsoptionen",
+      "about": "About"
+    }
+  },
+
+  "wow": {
+    "retail": {
+      "gold-message": "Gold in Dragonflight ist immer noch die wichtigste Währung, die Ihnen viele Möglichkeiten bietet. Mit Gold können Sie Reittiere, Haustiere, Transmog-Gegenstände und vor allem Verbrauchsmaterialien für jeden Inhalt kaufen, und sogar mythische Raid-Ausrüstung."
+    },
+    "classic": {
+      "gold-message": "In der Welt von World of Warcraft (CLASSIC), einem weltweit beliebten Spiel, ist Gold eine wichtige Währung, welche Ihnen den Zugang zu allen Schätzen und Möglichkeiten ermöglicht. Mit Gold können Sie sich nicht nur mit mächtigen Waffen ausstatten, um sich den Gegnern zu stellen, sondern auch mit der besten Ausrüstung, um sich vor allen Gefahren zu schützen."
+    },
+    "gold-security-hint-message": "GAMEJOY wird niemals nach Gold zurückfragen. Falls jemand das tut, handelt es sich um einen Betrug.",
+    "offers": "Angebote",
+    "fraction": {
+      "horde": "HORDE",
+      "alliance": "ALLIANZ"
+    }
+  },
+
+  "title": "Service-Feedback für {{company}}",
+  "name": {
+    "label": "Namen de",
+    "placeholder": "Name eingeben"
+  },
+
+  "gender": {
+    "label": "Geschlecht",
+    "select": "Wähle Geschlecht",
+    "options": {
+      "male": "Männlich",
+      "female": "Weiblich",
+      "other": "Andere"
+    }
+  },
+
+  "comment": {
+    "label": "Kommentar",
+    "placeholder": "Kommentar eingeben"
+  },
+
+  "rating": {
+    "label": "Bewerten Sie unseren Kundenservice:",
+    "options": {
+      "excellent": "Ausgezeichnet",
+      "good": "Gute",
+      "bad": "Schlecht"
+    }
+  },
+
+  "submit": {
+    "label": "Senden"
+  },
+
+  "requiredErrorMessage": "Dies ist ein Pflichtfeld.",
+  "successfulSubmitMessage": "Vielen Dank für Ihr wertvolles Feedback!!!\nDas Feedback wurde erfolgreich übermittelt.",
+  "copyright": "Alle Rechte vorbehalten. {{currentYear}} {{company}}"
+
+}

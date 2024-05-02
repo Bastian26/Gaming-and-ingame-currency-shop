@@ -9,7 +9,7 @@ import { euClassicServers, euRetailServers, usClassicServers, usRetailServers } 
 })
 export class WowGoldOfferComponent implements OnInit {
   region: string[] = ["EU", "US"];
-  fractions: string[] = ["Alliance", "Horde"]
+  fractions: string[] = ["wow.fraction.alliance", "wow.fraction.horde"]
 
   selectedServer: string;
   servers = euRetailServers;
