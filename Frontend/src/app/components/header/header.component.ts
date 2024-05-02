@@ -1,5 +1,9 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {TranslateService} from "@ngx-translate/core";
+import {Subject, takeUntil} from "rxjs";
+import {Store} from "@ngrx/store";
+import {AppState} from "../../store/model/app-state-model";
+import {User} from "../../models/user";
 
 @Component({
   selector: 'app-header',
@@ -8,6 +12,8 @@ import {TranslateService} from "@ngx-translate/core";
 })
 export class HeaderComponent implements OnInit {
   searchTerm = '';
+  welcomeName = 'Name'
+  user: User = null;
 
   siteLanguage = 'English';
   languages = [
@@ -17,12 +23,20 @@ export class HeaderComponent implements OnInit {
 
   selectedLanguage: { name: string, code: string };
   isOpen: boolean = false;
+  ngUnsubscribe = new Subject<void>();
 
-  constructor(private translate: TranslateService) {
+  constructor(private translate: TranslateService, private store: Store<AppState>) {
     this.selectedLanguage = this.languages[0];
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.store.select(state => state)
+      .pipe(takeUntil(this.ngUnsubscribe))
+      .subscribe(data => {
+        this.user = data?.activeUser?.user;
+        this.welcomeName = this.user?.firstName;
+      });
+  }
 
   onSelectLanguage(language: { name: string, code: string }) {
     this.selectedLanguage = language;
@@ -50,4 +64,8 @@ export class HeaderComponent implements OnInit {
   //   console.log('currentLanguage', currentLanguage);
   // }
 
+  ngOnDestroy(): void {
+    this.ngUnsubscribe.next();
+    this.ngUnsubscribe.complete();
+  }
 }

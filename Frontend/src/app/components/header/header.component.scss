@@ -101,62 +101,64 @@
           }
         }
       }
+      .account-link {
+        color: rgb(237, 237, 237);
+
+        &:hover {
+          color: #F1C400;
+        }
+      }
+
+      .user-icon {
+        text-align: center;
+        width: 11%;
+        margin: 42px 10px 0 0;
+        font-size: 2rem;
+        cursor: pointer;
+
+        &:hover {
+          color: #F1C400;
+        }
+      }
+
+      .logout-icon {
+        text-align: center;
+        width: 11%;
+        margin: 42px 0 0 -10px;
+        font-size: 2rem;
+        cursor: pointer;
+        color: rgba(237, 237, 237, 0.4);
+
+        &:hover {
+          color: #F1C400;
+        }
+      }
+
+      .verified-user {
+        position: relative;
+        text-align: center;
+        width: 25%;
+        margin: 42px 10px 0 0;
+        cursor: pointer;
 
 
+        .welcome-text {
+          position: absolute;
+          right: 45px;
+          top: 8px;
+          width: 120px;
+          text-align: center;
+          font-size: 1rem;
+          font-weight: 600;
+          display: inline-block;
+        }
 
-      //.language-picker {
-      //  width: 100px;
-      //  height: 2.3rem;
-      //  background: rgb(237, 237, 237);
-      //  margin-top: 40px;
-      //  padding: 5px;
-      //  border-radius: 5px;
-      //  color: black;
-      //  display: flex;
-      //  justify-content: space-between;
-      //  font-size: 1.3rem;
-      //
-      //  .arrow-icon {
-      //    font-size: 1.6rem;
-      //  }
-      //
-      //  list-style-type: none;
-      //  padding: 0;
-      //  margin: 0;
-      //  position: absolute;
-      //  background-color: white;
-      //  border-radius: 5px;
-      //  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      //  z-index: 1; /* Ensure the dropdown menu is on top of other elements */
-      //}
-
-      //mat-form-field {
-      //  width: 150px;
-      //  border-radius: 5px;
-      //  font-size: 0.1rem;
-
-      //margin-top: 40px;
-      //height: 2.3rem;
-      //background: rgb(237, 237, 237);
-      //width: fit-content;
-      //padding: 0 10px 0 10px;
-      //border-radius: 5px;
-
-      //::ng-deep .mat-focused .mat-form-field-label {
-      //  /*change color of label*/
-      //  color: #5F73FA !important;
-      //}
-      //
-      //::ng-deep.mat-form-field-underline {
-      //  /*change color of underline*/
-      //  background-color: #171E26 !important;
-      //}
-      //
-      //::ng-deep.mat-form-field-ripple {
-      //  /*change color of underline when focused*/
-      //  background-color: #F1C400 !important;
-      //}
-    //}
+        .verified-user-icon {
+          position: absolute;
+          right: 20px;
+          font-size: 2rem;
+        }
+      }
     }
   }
 

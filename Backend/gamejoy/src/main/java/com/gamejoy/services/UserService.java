@@ -33,6 +33,7 @@ public class UserService {
         if (passwordEncoder.matches(CharBuffer.wrap(credentialDto.password()),
                 user.getPassword())) {
             return userMapper.toUserDto(user);
+
         }
         throw new AppException("Invalid password", HttpStatus.BAD_REQUEST);
     }

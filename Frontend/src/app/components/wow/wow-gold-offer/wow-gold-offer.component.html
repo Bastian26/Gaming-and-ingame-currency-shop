@@ -1,4 +1,3 @@
-<p>wow-gold-offer works!</p>
 <div class="game-properties-bar">
   <app-switcher-tab
     class="switcher-tab-servers"
@@ -10,7 +9,14 @@
   </app-switcher-tab>
 
   <select class="server-menu" [(ngModel)]="selectedServer" (ngModelChange)="onServerChange($event)">>
-    <option class="server-menu-option" *ngFor="let server of servers" [value]="server.value">{{ server.name }}</option>
+    <option class="server-menu-option" *ngFor="let server of servers" [value]="server.value">
+      <span *ngIf="server.value === 'all'; else specificServer">
+        {{ "wow.servers" | translate }}
+      </span>
+      <ng-template #specificServer>
+        {{ server.name }}
+      </ng-template>
+    </option>
   </select>
 </div>
 

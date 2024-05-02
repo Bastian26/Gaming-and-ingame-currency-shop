@@ -30,6 +30,18 @@
           </li>
         </ul>
       </div>
+      <a routerLink="account" class="account-link">
+        <i class="material-icons user-icon" *ngIf="user === null">supervised_user_circle</i>
+      </a>
+      <div class="verified-user" *ngIf="user !== null">
+        <a routerLink="account" class="account-link">
+          <span class="welcome-text">Hallo {{welcomeName}}!</span>
+          <i class="material-icons icon verified-user-icon">verified_user</i>
+        </a>
+      </div>
+      <a routerLink="account" *ngIf="user !== null" class="account-link">
+        <i class="material-icons logout-icon">logout</i>
+      </a>
     </div>
   </nav>
   <div class="header-bottom">

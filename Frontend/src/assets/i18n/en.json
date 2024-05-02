@@ -21,7 +21,8 @@
     "fraction": {
       "horde": "HORDE",
       "alliance": "ALLIANCE"
-    }
+    },
+    "servers": "All Server"
   },
 
   "title": "Service feedback for {{company}}",

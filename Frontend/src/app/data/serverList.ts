@@ -1,6 +1,7 @@
 import {server} from "../models/server";
 
 export const euRetailServers: server[] = [
+  { name: 'All Server', value: 'all', type: null, region: null },
   { name: 'Aegwynn', value: 'aegwynn', type: 'PvP', region: 'de' },
   { name: 'Alexstrasza', value: 'alexstrasza', type: 'PvE', region: 'de' },
   { name: 'Alleria', value: 'alleria', type: 'PvE', region: 'de' },
@@ -21,6 +22,7 @@ export const euRetailServers: server[] = [
 
 
 export const euClassicServers: server [] = [
+  { name: 'All Server', value: 'all', type: null, region: null },
   { name: 'Khaz\'goroth', value: 'khazgoroth', type: 'PvE', region: 'de' },
   { name: 'Kult der Verdammten', value: 'kultderverdammten', type: 'RP-PvP', region: 'de' },
   { name: 'Lothar', value: 'lothar', type: 'PvE', region: 'de' },
@@ -32,6 +34,7 @@ export const euClassicServers: server [] = [
 ];
 
 export const usRetailServers: server[] = [
+  { name: 'All Server', value: 'all', type: null, region: null },
   { name: 'Aegwynn', value: 'aegwynn', type: 'PvP', region: 'en' },
   { name: 'Aerie Peak', value: 'aeriepeak', type: 'PvE', region: 'en' },
   { name: 'Agamaggan', value: 'agamaggan', type: 'PvP', region: 'en' },
@@ -53,6 +56,7 @@ export const usRetailServers: server[] = [
 
 
 export const usClassicServers: server [] = [
+  { name: 'All Server', value: 'all', type: null, region: null },
   { name: 'Auchindoun', value: 'auchindoun', type: 'PvP', region: 'en' },
   { name: 'Azgalor', value: 'azgalor', type: 'PvP', region: 'en' },
   { name: 'Barthilas', value: 'barthilas', type: 'PvP', region: 'en (oc)' },

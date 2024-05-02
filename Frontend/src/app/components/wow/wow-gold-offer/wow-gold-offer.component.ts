@@ -17,11 +17,19 @@ export class WowGoldOfferComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.selectedServer = 'all';
+    this.selectedServer = euRetailServers[0].value;
   }
 
   onServerChange(selectedValue: string) {
     console.log('Ausgewählter Server:', selectedValue);
+    if(selectedValue === 'all') {
+      // Behandle den Fall, wenn 'all' ausgewählt wurde
+      // Hier könntest du alle Server behandeln, z.B.:
+      // this.servers = [...euRetailServers, ...euClassicServers, ...usRetailServers, ...usClassicServers];
+    } else {
+      // Behandle den Fall, wenn ein bestimmter Server ausgewählt wurde
+      // Hier könntest du entsprechende Logik implementieren, um nur die ausgewählten Server zu laden
+    }
   }
 
 

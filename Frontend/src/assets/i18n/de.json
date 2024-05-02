@@ -22,7 +22,8 @@
     "fraction": {
       "horde": "HORDE",
       "alliance": "ALLIANZ"
-    }
+    },
+    "servers": "Alle Server"
   },
 
   "title": "Service-Feedback für {{company}}",
