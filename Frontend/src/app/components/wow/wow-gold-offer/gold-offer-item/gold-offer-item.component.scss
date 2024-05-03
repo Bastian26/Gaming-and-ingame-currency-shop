@@ -1,0 +1,68 @@
+.item-wrapper {
+  width: 70%;
+  height: 9%;
+  background-color: rgba(64, 43, 90, 0.8);
+  border: 1.3px solid #6679fa;
+  margin: 20px auto;
+  border-radius: 5px;
+  display: flex;
+  padding: 5px;
+  position: relative;
+
+ .currency-wrapper {
+   flex-direction: column;
+   margin-left: 10px;
+
+   h2 {
+     margin: 0  0 0 0;
+     font-size: 2rem;
+     font-weight: 500;
+   }
+
+   .subtitle {
+     font-size: 1rem;
+   }
+ }
+
+  .seller-stock {
+    margin: 3px 20px 0 15%;
+    background-color: rgba(24, 20, 30, 0.7);
+    width: 20%;
+    text-align: center;
+    font-size: 1rem;
+
+    p {
+      margin: 15px auto;
+    }
+  }
+
+  .server-and-fraction {
+    width: fit-content;
+    border-radius: 3px;
+    background-color: #6679fa;
+    height: fit-content;
+    padding: 4px;
+    font-size: 0.9rem;
+    margin: 15px 10px 0 5px;
+
+  }
+
+  button {
+    margin: 5px 0 0 0;
+    color: white;
+    background-color: #207620;
+    width: 10%;
+    height: 2.5rem;
+    border: 0.3px solid #6679fa;
+    font-size: 1.3rem;
+    font-weight: 550;
+    position: absolute;
+    right: 30px;
+    cursor: pointer;
+  }
+
+  &:hover {
+    background-color: rgba(81, 51, 142, 0.8);
+    border: 1.2px solid #6679fa;
+  }
+}

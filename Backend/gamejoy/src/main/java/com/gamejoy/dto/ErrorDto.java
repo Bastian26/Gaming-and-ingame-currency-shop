@@ -1,6 +1,10 @@
 package com.gamejoy.dto;
 
 public class ErrorDto {
-    public ErrorDto(String message) {
+
+    private String errorMessage;
+
+    public ErrorDto(String errorMessage) {
+        this.errorMessage = errorMessage;
     }
 }

@@ -35,6 +35,7 @@ import { LoginFormComponent } from './components/account/login-form/login-form.c
 import { ButtonsComponent } from './components/account/buttons/buttons.component';
 import { SwitcherTabComponent } from './components/wow/switcher-tab/switcher-tab.component';
 import { NgxTranslateModule } from './translate/translate.module';
+import { GoldOfferItemComponent } from './components/wow/wow-gold-offer/gold-offer-item/gold-offer-item.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { NgxTranslateModule } from './translate/translate.module';
     LoginFormComponent,
     ButtonsComponent,
     SwitcherTabComponent,
+    GoldOfferItemComponent,
 
   ],
   imports: [
