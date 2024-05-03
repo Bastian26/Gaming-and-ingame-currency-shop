@@ -35,13 +35,11 @@
       </a>
       <div class="verified-user" *ngIf="user !== null">
         <a routerLink="account" class="account-link">
-          <span class="welcome-text">Hallo {{welcomeName}}!</span>
+          <span class="welcome-text">{{ 'header.welcome-text' | translate : {name: user.firstName} }}</span>
           <i class="material-icons icon verified-user-icon">verified_user</i>
         </a>
       </div>
-      <a routerLink="account" *ngIf="user !== null" class="account-link">
-        <i class="material-icons logout-icon">logout</i>
-      </a>
+      <i class="material-icons logout-icon" (click)="logout()">logout</i>
     </div>
   </nav>
   <div class="header-bottom">
@@ -56,54 +54,28 @@
         </button>
 
         <mat-menu #games="matMenu" class="chooseGameNestedButton">
-          <a routerLink="wow-overview"
-            ><button mat-menu-item [matMenuTriggerFor]="wow">WoW</button></a
-          >
-          <a routerLink="#"
-            ><button mat-menu-item [matMenuTriggerFor]="newWorld">
-              New World
-            </button></a
-          >
-          <a routerLink="#"
-            ><button mat-menu-item [matMenuTriggerFor]="newWorld">
-              Bethesda Games
-            </button></a
-          >
-          <a routerLink="#"
-            ><button mat-menu-item [matMenuTriggerFor]="newWorld">
-              Rockstar Games
-            </button></a
-          >
-          <a routerLink="#"
-            ><button mat-menu-item [matMenuTriggerFor]="newWorld">
-              EA Games
-            </button></a
-          >
+          <button (click)="navigate('wow-overview')" mat-menu-item [matMenuTriggerFor]="wow">WoW</button>
+          <button (click)="navigate('#')" mat-menu-item [matMenuTriggerFor]="newWorld">New World</button>
+          <button (click)="navigate('#')" mat-menu-item [matMenuTriggerFor]="newWorld">Bethesda Games</button>
+          <button (click)="navigate('#')" mat-menu-item [matMenuTriggerFor]="newWorld">Rockstar Games</button>
+          <button (click)="navigate('#')" mat-menu-item [matMenuTriggerFor]="newWorld">EA Games</button>
         </mat-menu>
 
         <mat-menu #wow="matMenu" class="chooseGameNestedButton">
-          <a routerLink="/wow/retail-gold"
-            ><button mat-menu-item [matMenuTriggerFor]="wowRetail">
-              WoW Retail Gold
-            </button>
-          </a>
-          <a routerLink="/wow/classic-gold">
-            ><button mat-menu-item [matMenuTriggerFor]="wowClassic">
-              WoW Classic Gold
-            </button>
-          </a>
+          <button (click)="navigate('/wow/retail-gold')" mat-menu-item [matMenuTriggerFor]="wowRetail">WoW Retail Gold</button>
+          <button (click)="navigate('/wow/classic-gold')" mat-menu-item [matMenuTriggerFor]="wowClassic">WoW Classic Gold</button>
         </mat-menu>
 
         <mat-menu #newWorld="matMenu" class="chooseGameNestedButton">
-          <a routerLink="#"><button mat-menu-item>Taler</button></a>
+          <button (click)="navigate('#')" mat-menu-item>Taler</button>
         </mat-menu>
 
         <mat-menu #wowRetail="matMenu" class="chooseGameNestedButton">
-          <a routerLink="#"><button mat-menu-item>Gold</button></a>
+          <button (click)="navigate('#')" mat-menu-item>Gold</button>
         </mat-menu>
 
         <mat-menu #wowClassic="matMenu" class="chooseGameNestedButton">
-          <a routerLink="#"><button mat-menu-item>Gold</button></a>
+          <button (click)="navigate('#')" mat-menu-item>Gold</button>
         </mat-menu>
       </div>
 

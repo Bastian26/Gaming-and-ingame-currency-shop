@@ -6,7 +6,8 @@
       "help": "Help",
       "payment-options": "Payment Options",
       "about": "About"
-    }
+    },
+    "welcome-text": "Hello {{name}}!"
   },
 
   "wow": {

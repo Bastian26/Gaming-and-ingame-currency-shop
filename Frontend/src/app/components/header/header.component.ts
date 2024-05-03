@@ -4,6 +4,9 @@ import {Subject, takeUntil} from "rxjs";
 import {Store} from "@ngrx/store";
 import {AppState} from "../../store/model/app-state-model";
 import {User} from "../../models/user";
+import * as UserActions from "../../store/actions/user.actions";
+import {AxiosService} from "../../services/axios.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-header',
@@ -12,20 +15,21 @@ import {User} from "../../models/user";
 })
 export class HeaderComponent implements OnInit {
   searchTerm = '';
-  welcomeName = 'Name'
   user: User = null;
 
   siteLanguage = 'English';
   languages = [
     {name: 'DE', code: 'de'},
-    {name: 'EN', code: 'en'},
+    {name: 'EN', code: 'gb'},
   ];
 
   selectedLanguage: { name: string, code: string };
   isOpen: boolean = false;
   ngUnsubscribe = new Subject<void>();
 
-  constructor(private translate: TranslateService, private store: Store<AppState>) {
+  constructor(private axiosService: AxiosService, private translate: TranslateService,
+              private store: Store<AppState>, private router: Router,
+              private _activatedRoute:ActivatedRoute) {
     this.selectedLanguage = this.languages[0];
   }
 
@@ -34,13 +38,12 @@ export class HeaderComponent implements OnInit {
       .pipe(takeUntil(this.ngUnsubscribe))
       .subscribe(data => {
         this.user = data?.activeUser?.user;
-        this.welcomeName = this.user?.firstName;
       });
   }
 
   onSelectLanguage(language: { name: string, code: string }) {
     this.selectedLanguage = language;
-    this.translate.use(language.code);
+    this.translate.use(language.code === 'gb' ? 'en' : language.code);
     console.log("changed language to " + this.selectedLanguage.name);
   }
 
@@ -67,5 +70,14 @@ export class HeaderComponent implements OnInit {
   ngOnDestroy(): void {
     this.ngUnsubscribe.next();
     this.ngUnsubscribe.complete();
+  }
+
+  logout() {
+    this.axiosService.setAuthToken(null);
+    this.store.dispatch(UserActions.logout());
+  }
+
+  navigate(route: string) {
+    this.router.navigate([route]);
   }
 }

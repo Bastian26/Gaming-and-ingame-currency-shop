@@ -5,6 +5,7 @@ import {Store} from "@ngrx/store";
 import {AppState} from "../../store/model/app-state-model";
 import * as UserActions from "../../store/actions/user.actions";
 import * as LoadingActions from "../../store/actions/loading.actions";
+import {Subject, takeUntil} from "rxjs";
 
 @Component({
   selector: 'app-account',
@@ -13,10 +14,17 @@ import * as LoadingActions from "../../store/actions/loading.actions";
 })
 export class AccountComponent implements OnInit {
   componentToShow: string = "welcome";
+  user: User = null;
+  ngUnsubscribe = new Subject<void>();
 
   constructor(private axiosService: AxiosService, private store: Store<AppState>) { }
 
   ngOnInit(): void {
+    this.store.select(state => state)
+      .pipe(takeUntil(this.ngUnsubscribe))
+      .subscribe(data => {
+        this.user = data?.activeUser?.user;
+      });
   }
 
   showComponent(componentToShow: string): void {
@@ -94,6 +102,11 @@ export class AccountComponent implements OnInit {
       console.log("User " + user.userName + " logged in");
     }
     return null;
+  }
+
+  ngOnDestroy(): void {
+    this.ngUnsubscribe.next();
+    this.ngUnsubscribe.complete();
   }
 
 }

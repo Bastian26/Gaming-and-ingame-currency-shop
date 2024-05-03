@@ -2,12 +2,12 @@
   <app-buttons (loginEvent)="showComponent('login')"
                (logoutEvent)="showComponent('welcome')"></app-buttons>
 
-  <app-welcome-content *ngIf="componentToShow == 'welcome'"></app-welcome-content>
+  <app-welcome-content *ngIf="componentToShow == 'welcome' && user === null"></app-welcome-content>
   <app-login-form
     *ngIf="componentToShow == 'login'"
     (onSubmitLoginEvent)="onLogin($event)"
     (onSubmitRegisterEvent)="onRegister($event)"
   ></app-login-form>
 
-  <app-account-details *ngIf="componentToShow == 'account-details'"></app-account-details>
+  <app-account-details *ngIf="user !== null"></app-account-details>
 </div>

@@ -103,6 +103,7 @@
       }
       .account-link {
         color: rgb(237, 237, 237);
+        padding-left: 15px;
 
         &:hover {
           color: #F1C400;
@@ -200,6 +201,8 @@
           height: 100%;
           width: 100%;
           border: 0;
+          font-size: inherit;
+          font-family: inherit;
         }
 
         .showAllGamesDropDownBtn:hover {
@@ -233,13 +236,8 @@
     background-color: #273544;
   }
 
-  a {
-    color: transparent;
-  }
-
-  a > button {
-    color: rgb(217, 217, 227);;
-
+  button {
+    color: rgb(217, 217, 227);
   }
 }
 
