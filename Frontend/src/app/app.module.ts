@@ -36,6 +36,7 @@ import { ButtonsComponent } from './components/account/buttons/buttons.component
 import { SwitcherTabComponent } from './components/wow/switcher-tab/switcher-tab.component';
 import { NgxTranslateModule } from './translate/translate.module';
 import { GoldOfferItemComponent } from './components/wow/wow-gold-offer/gold-offer-item/gold-offer-item.component';
+import {NgbInputDatepicker} from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
   declarations: [
@@ -60,26 +61,27 @@ import { GoldOfferItemComponent } from './components/wow/wow-gold-offer/gold-off
     GoldOfferItemComponent,
 
   ],
-  imports: [
-    AppRoutingModule,
-    MatSelectModule,
-    MatInputModule,
-    MatButtonModule,
-    BrowserModule,
-    MatMenuModule,
-    BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatIconModule,
-    FormsModule,
-    CommonModule,
-    NgxTranslateModule,
-    MatProgressSpinner,
-    StoreModule.forRoot(reducers),
-    StoreDevtoolsModule.instrument({
-      maxAge: 25, // Retains last 25 states
-      logOnly: environment.production, // Restrict extension to log-only mode
-    }),
-  ],
+    imports: [
+        AppRoutingModule,
+        MatSelectModule,
+        MatInputModule,
+        MatButtonModule,
+        BrowserModule,
+        MatMenuModule,
+        BrowserAnimationsModule,
+        MatFormFieldModule,
+        MatIconModule,
+        FormsModule,
+        CommonModule,
+        NgxTranslateModule,
+        MatProgressSpinner,
+        StoreModule.forRoot(reducers),
+        StoreDevtoolsModule.instrument({
+            maxAge: 25, // Retains last 25 states
+            logOnly: environment.production, // Restrict extension to log-only mode
+        }),
+        NgbInputDatepicker,
+    ],
   providers: [],
   bootstrap: [AppComponent],
 })

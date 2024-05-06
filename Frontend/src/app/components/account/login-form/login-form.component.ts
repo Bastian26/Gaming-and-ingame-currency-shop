@@ -1,4 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {NgbDateStruct} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-login-form',
@@ -14,8 +15,15 @@ export class LoginFormComponent implements OnInit {
   active: string = "login";
   firstName: string = "";
   lastName: string = "";
+  email: string = "";
   userName: string = "";
   password: string = "";
+  street: string = "";
+  plz: string = "";
+  country: string = "";
+  tel: string = "";
+  model: NgbDateStruct;
+  birthdate: Date;
 
   // Method to switch between the forms
   onLoginTab(): void {

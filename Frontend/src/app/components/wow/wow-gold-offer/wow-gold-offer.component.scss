@@ -1,5 +1,6 @@
 .game-properties-bar {
   display: flex;
+  position: relative;
 
   .switcher-tab-servers {
     margin-left: 0px;
@@ -33,4 +34,49 @@
       padding: 3px 5px 3px 5px;
     }
   }
+
+  .gold-sell-btn {
+    color: white;
+    border: transparent;
+    border-radius: 5px;;
+    background-color: rgba(102, 121, 250, 0.5);
+    display: flex;
+    align-items: center;
+    padding-top: 3px;
+    position: absolute;
+    right: 200px;
+    height: 2.3rem;
+
+    .add-icon {
+      font-size: 1.6rem;
+    }
+
+    span {
+      margin: 0 5px 0 5px;
+    }
+
+    &:hover {
+      background-color: rgba(59, 59, 134, 0.5);
+    }
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background */
+  z-index: 9999; /* Ensure that modal is on top */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  width: 50%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
 }

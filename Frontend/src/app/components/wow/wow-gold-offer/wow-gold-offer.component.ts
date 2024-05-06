@@ -8,6 +8,7 @@ import { euClassicServers, euRetailServers, usClassicServers, usRetailServers } 
   styleUrls: ['./wow-gold-offer.component.scss']
 })
 export class WowGoldOfferComponent implements OnInit {
+  modalGoldSellOpen = false;
   region: string[] = ["EU", "US"];
   fractions: string[] = ["wow.fraction.alliance", "wow.fraction.horde"]
 
@@ -32,5 +33,11 @@ export class WowGoldOfferComponent implements OnInit {
     }
   }
 
+  openGoldSellModal(): void {
+    this.modalGoldSellOpen = true;
+  }
 
+  closeGoldSellModal(): void {
+    this.modalGoldSellOpen = false;
+  }
 }

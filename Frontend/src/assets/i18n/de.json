@@ -24,7 +24,19 @@
       "horde": "HORDE",
       "alliance": "ALLIANZ"
     },
-    "servers": "Alle Server"
+    "servers": {
+      "all-server-text": "Alle Server",
+      "server-eu": "EU",
+      "server-us": "US"
+    },
+    "gold-seller-btn-text": "VERKAUFE GOLD",
+    "gold-offer": {
+      "gold-offer-item": {
+          "amount-text": "pro",
+          "stock-text": "Auf Lager",
+          "buy-item": "Kaufen"
+      }
+    }
   },
 
   "title": "Service-Feedback für {{company}}",

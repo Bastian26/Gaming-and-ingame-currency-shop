@@ -40,6 +40,11 @@
           </div>
 
           <div class="form-outline mb-4">
+            <input class="form-control" type="email" id="email" name="email" [(ngModel)]="email"/>
+            <label class="form-label" for="email">E-Mail</label>
+          </div>
+
+          <div class="form-outline mb-4">
             <input class="form-control" type="text" id="userName" name="userName" [(ngModel)]="userName"/>
             <label class="form-label" for="userName">Username</label>
           </div>
@@ -48,6 +53,83 @@
             <input class="form-control" type="password" id="password" name="password" [(ngModel)]="password"/>
             <label class="form-label" for="password">Password</label>
           </div>
+
+          <div class="form-outline mb-4">
+            <input class="form-control" type="text" id="street" name="street" [(ngModel)]="street"/>
+            <label class="form-label" for="street">Straße</label>
+          </div>
+
+          <div class="form-outline mb-4">
+            <input class="form-control" type="text" id="plz" name="plz" [(ngModel)]="plz"/>
+            <label class="form-label" for="plz">PLZ</label>
+          </div>
+
+          <div class="form-outline mb-4">
+            <input class="form-control" type="text" id="country" name="country" [(ngModel)]="country"/>
+            <label class="form-label" for="country">land</label>
+          </div>
+
+          <div class="form-outline mb-4">
+            <input class="form-control" type="tel" id="tel" name="tel" [(ngModel)]="tel"/>
+            <label class="form-label" for="tel">Tel-Nr.</label>
+          </div>
+
+          <div class="datepicker input-group">
+            <input
+              class="form-control"
+              placeholder="yyyy-mm-dd"
+              name="dp"
+              id="birthdate"
+              name="birthdate"
+              [(ngModel)]="birthdate"
+              ngbDatepicker
+              #d="ngbDatepicker"
+            />
+            <button class="btn btn-outline-secondary bi bi-calendar3" (click)="d.toggle()" type="button"></button>
+          </div>
+          <label class="form-label" for="birthdate">Geburtsdatum</label>
+
+          <button type="submit" class="btn btn-primary btn-block mb-4">Register</button>
+        </form>
+
+        <p>p</p><p>p</p><p>p</p><p>p</p><p>p</p>
+        <form (ngSubmit)="onSubmitRegister()" #loginForm="ngForm">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-outline mb-4">
+                <input class="form-control" type="text" id="firstName" name="firstName" [(ngModel)]="firstName"/>
+                <label class="form-label" for="firstName">First Name</label>
+              </div>
+
+              <!-- Weitere Felder für den ersten Abschnitt -->
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-outline mb-4">
+                <input class="form-control" type="text" id="street" name="street" [(ngModel)]="street"/>
+                <label class="form-label" for="street">Straße</label>
+              </div>
+
+              <!-- Weitere Felder für den zweiten Abschnitt -->
+            </div>
+          </div>
+
+          <!-- Weitere Spalten oder Abschnitte hier einfügen -->
+
+          <div class="form-outline mb-4">
+            <input
+              class="form-control"
+              placeholder="yyyy-mm-dd"
+              name="dp"
+              id="birthdate"
+              name="birthdate"
+              [(ngModel)]="birthdate"
+              ngbDatepicker
+              #d="ngbDatepicker"
+            />
+            <button class="btn btn-outline-secondary bi bi-calendar3" (click)="d.toggle()" type="button"></button>
+          </div>
+          <label class="form-label" for="birthdate">Geburtsdatum</label>
 
           <button type="submit" class="btn btn-primary btn-block mb-4">Register</button>
         </form>

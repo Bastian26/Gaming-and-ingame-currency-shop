@@ -23,7 +23,19 @@
       "horde": "HORDE",
       "alliance": "ALLIANCE"
     },
-    "servers": "All Server"
+    "servers": {
+      "all-server-text": "All Server",
+      "server-eu": "EU",
+      "server-us": "US"
+    },
+    "gold-seller-btn-text": "SELL YOUR GOLD",
+    "gold-offer": {
+      "gold-offer-item": {
+        "amount-text": "per",
+        "stock-text": "In Stock",
+        "buy-item": "Buy"
+      }
+    }
   },
 
   "title": "Service feedback for {{company}}",

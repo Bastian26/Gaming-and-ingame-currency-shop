@@ -1,3 +1,11 @@
+<app-modal class="modal-overlay" *ngIf="modalGoldSellOpen" (close)="closeGoldSellModal()">
+    <div class="modal-content">
+      <!-- Modal contents here -->
+      <button (click)="closeGoldSellModal()">Schließen</button>
+    </div>
+</app-modal>
+
+
 <div class="game-properties-bar">
   <app-switcher-tab
     class="switcher-tab-servers"
@@ -11,13 +19,16 @@
   <select class="server-menu" [(ngModel)]="selectedServer" (ngModelChange)="onServerChange($event)">>
     <option class="server-menu-option" *ngFor="let server of servers" [value]="server.value">
       <span *ngIf="server.value === 'all'; else specificServer">
-        {{ "wow.servers" | translate }}
+        {{ "wow.servers.all-server-text" | translate }}
       </span>
       <ng-template #specificServer>
         {{ server.name }}
       </ng-template>
     </option>
   </select>
+  <button class="gold-sell-btn" (click)="openGoldSellModal()"><i class="material-icons add-icon">
+    add</i> <span>{{ "wow.gold-seller-btn-text" | translate }}</span>
+  </button>
 </div>
 <app-gold-offer-item></app-gold-offer-item>
 <app-gold-offer-item></app-gold-offer-item>
