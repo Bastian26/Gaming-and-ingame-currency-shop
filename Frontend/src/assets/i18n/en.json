@@ -38,35 +38,31 @@
     }
   },
 
+  "account": {
+    "form": {
+      "first-name": "First Name",
+      "last-name": "Last Name",
+      "user-name": "User Name",
+      "email": "Email",
+      "tel": "Tel",
+      "password": "Password",
+      "birthdate": "Birthdate",
+      "address": {
+        "address": "Address",
+        "street": "Street and House Number",
+        "postcode": "ZIP",
+        "state": "State"
+      },
+      "register": "Register",
+      "sign-in": "Sign In"
+    }
+  },
+
+
   "title": "Service feedback for {{company}}",
   "name": {
     "label": "Name en",
     "placeholder": "Enter Name"
-  },
-
-  "gender": {
-    "label": "Gender",
-    "select": "Select gender",
-    "options": {
-      "male": "Male",
-      "female": "Female",
-      "other": "Other"
-    }
-
-  },
-
-  "comment": {
-    "label": "Comment",
-    "placeholder": "Enter Comment"
-  },
-
-  "rating": {
-    "label": "Rate our customer service: ",
-    "options": {
-      "excellent": "Excellent",
-      "good": "Good",
-      "bad": "Bad"
-    }
   },
 
   "submit": {

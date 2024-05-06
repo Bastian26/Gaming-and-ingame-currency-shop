@@ -1,139 +1,105 @@
 <div class="row justify-content-center">
-  <div class="col-4">
+  <div class="col-6">
 
     <ul class="nav nav-pills nav-tabs" id="ex1" role="tablist">
       <li class="nav-item " role="presentation">
         <button [ngClass]="active == 'login' ? 'nav-link active' : 'nav-link'" id="tab-login"
-                (click)="onLoginTab()">Login</button>
+                (click)="onLoginTab()">{{ "account.form.sign-in" | translate }}</button>
         <button [ngClass]="active == 'register' ? 'nav-link active' : 'nav-link'" id="tab-register"
-                (click)="onRegisterTab()">Register</button>
+                (click)="onRegisterTab()">{{ "account.form.register" | translate }}</button>
       </li>
     </ul>
 
     <div class="tab-content">
       <div [ngClass]="active == 'login' ? 'tab-pane fade show active' : 'tab-pane fade'">
-        <form (ngSubmit)="onSubmitLogin()" #loginForm="ngForm">
+        <form (ngSubmit)="onSubmitLogin()" #loginForm="ngForm" class="jumbotron">
           <div class="form-outline mb-4">
             <input class="form-control" type="login" id="loginName" name="userName" [(ngModel)]="userName"/>
-            <label class="form-label" for="loginName">Username</label>
+            <label class="form-label" for="loginName">{{ "account.form.user-name" | translate }}</label>
           </div>
 
           <div class="form-outline mb-4">
             <input class="form-control" type="password" id="loginPassword" name="password" [(ngModel)]="password"/>
-            <label class="form-label" for="loginPassword">Password</label>
+            <label class="form-label" for="loginPassword">{{ "account.form.password" | translate }}</label>
           </div>
 
-          <button type="submit" class="btn btn-primary btn-block mb-4">Sign In</button>
+          <button type="submit" class="btn btn-primary btn-block mb-4">{{ "account.form.sign-in" | translate }}</button>
         </form>
       </div>
 
       <div [ngClass]="active == 'register' ? 'tab-pane fade show active' : 'tab-pane fade'">
-        <form (ngSubmit)="onSubmitRegister()" #loginForm="ngForm">
-          <div class="form-outline mb-4">
-            <input class="form-control" type="text" id="firstName" name="firstName" [(ngModel)]="firstName"/>
-            <label class="form-label" for="firstName">First Name</label>
-          </div>
-
-          <div class="form-outline mb-4">
-            <input class="form-control" type="text" id="lastName" name="lastName" [(ngModel)]="lastName"/>
-            <label class="form-label" for="lastName">Last Name</label>
-          </div>
-
-          <div class="form-outline mb-4">
-            <input class="form-control" type="email" id="email" name="email" [(ngModel)]="email"/>
-            <label class="form-label" for="email">E-Mail</label>
-          </div>
-
-          <div class="form-outline mb-4">
-            <input class="form-control" type="text" id="userName" name="userName" [(ngModel)]="userName"/>
-            <label class="form-label" for="userName">Username</label>
-          </div>
-
-          <div class="form-outline mb-4">
-            <input class="form-control" type="password" id="password" name="password" [(ngModel)]="password"/>
-            <label class="form-label" for="password">Password</label>
-          </div>
-
-          <div class="form-outline mb-4">
-            <input class="form-control" type="text" id="street" name="street" [(ngModel)]="street"/>
-            <label class="form-label" for="street">Straße</label>
-          </div>
-
-          <div class="form-outline mb-4">
-            <input class="form-control" type="text" id="plz" name="plz" [(ngModel)]="plz"/>
-            <label class="form-label" for="plz">PLZ</label>
-          </div>
-
-          <div class="form-outline mb-4">
-            <input class="form-control" type="text" id="country" name="country" [(ngModel)]="country"/>
-            <label class="form-label" for="country">land</label>
-          </div>
-
-          <div class="form-outline mb-4">
-            <input class="form-control" type="tel" id="tel" name="tel" [(ngModel)]="tel"/>
-            <label class="form-label" for="tel">Tel-Nr.</label>
-          </div>
-
-          <div class="datepicker input-group">
-            <input
-              class="form-control"
-              placeholder="yyyy-mm-dd"
-              name="dp"
-              id="birthdate"
-              name="birthdate"
-              [(ngModel)]="birthdate"
-              ngbDatepicker
-              #d="ngbDatepicker"
-            />
-            <button class="btn btn-outline-secondary bi bi-calendar3" (click)="d.toggle()" type="button"></button>
-          </div>
-          <label class="form-label" for="birthdate">Geburtsdatum</label>
-
-          <button type="submit" class="btn btn-primary btn-block mb-4">Register</button>
-        </form>
-
-        <p>p</p><p>p</p><p>p</p><p>p</p><p>p</p>
-        <form (ngSubmit)="onSubmitRegister()" #loginForm="ngForm">
+        <form (ngSubmit)="onSubmitRegister()" #loginForm="ngForm" class="jumbotron">
           <div class="row">
             <div class="col-md-6">
               <div class="form-outline mb-4">
                 <input class="form-control" type="text" id="firstName" name="firstName" [(ngModel)]="firstName"/>
-                <label class="form-label" for="firstName">First Name</label>
+                <label class="form-label" for="firstName">{{ "account.form.first-name" | translate }}</label>
               </div>
-
-              <!-- Weitere Felder für den ersten Abschnitt -->
+              <div class="form-outline mb-4">
+                <input class="form-control" type="text" id="userName" name="userName" [(ngModel)]="userName"/>
+                <label class="form-label" for="userName">{{ "account.form.user-name" | translate }}</label>
+              </div>
+              <div class="form-outline mb-4">
+                <input class="form-control" type="tel" id="tel" name="tel" [(ngModel)]="tel"/>
+                <label class="form-label" for="tel">{{ "account.form.tel" | translate }}</label>
+              </div>
             </div>
-
             <div class="col-md-6">
               <div class="form-outline mb-4">
-                <input class="form-control" type="text" id="street" name="street" [(ngModel)]="street"/>
-                <label class="form-label" for="street">Straße</label>
+                <input class="form-control" type="text" id="lastName" name="lastName" [(ngModel)]="lastName"/>
+                <label class="form-label" for="lastName">{{ "account.form.last-name" | translate }}</label>
               </div>
-
-              <!-- Weitere Felder für den zweiten Abschnitt -->
+              <div class="form-outline mb-4">
+                <input class="form-control" type="email" id="email" name="email" [(ngModel)]="email"/>
+                <label class="form-label" for="email">{{ "account.form.email" | translate }}</label>
+              </div>
+              <div class="form-outline mb-4">
+                <div class="datepicker input-group">
+                  <input
+                    class="form-control"
+                    placeholder="yyyy-mm-dd"
+                    name="dp"
+                    id="birthdate"
+                    name="birthdate"
+                    [(ngModel)]="birthdate"
+                    ngbDatepicker
+                    #d="ngbDatepicker"
+                  />
+                  <button class="btn btn-outline-secondary bi bi-calendar3" (click)="d.toggle()" type="button"></button>
+                </div>
+                <label class="form-label" for="birthdate">{{ "account.form.birthdate" | translate }}</label>
+              </div>
             </div>
           </div>
 
-          <!-- Weitere Spalten oder Abschnitte hier einfügen -->
-
-          <div class="form-outline mb-4">
-            <input
-              class="form-control"
-              placeholder="yyyy-mm-dd"
-              name="dp"
-              id="birthdate"
-              name="birthdate"
-              [(ngModel)]="birthdate"
-              ngbDatepicker
-              #d="ngbDatepicker"
-            />
-            <button class="btn btn-outline-secondary bi bi-calendar3" (click)="d.toggle()" type="button"></button>
+          <div class="hrdivider">
+            <hr/>
+            <span >{{ "account.form.address.address" | translate }}</span>
           </div>
-          <label class="form-label" for="birthdate">Geburtsdatum</label>
 
-          <button type="submit" class="btn btn-primary btn-block mb-4">Register</button>
+          <div class="form-outline mb-4  mt-4">
+            <input class="form-control" type="text" id="street" name="street" [(ngModel)]="street"/>
+            <label class="form-label" for="street">{{ "account.form.address.street" | translate }}</label>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-outline mb-4">
+                <input class="form-control" type="text" id="plz" name="plz" [(ngModel)]="plz"/>
+                <label class="form-label" for="plz">{{ "account.form.address.postcode" | translate }}</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-outline mb-4">
+                <input class="form-control" type="text" id="country" name="country" [(ngModel)]="country"/>
+                <label class="form-label" for="country">{{ "account.form.address.state" | translate }}</label>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block mb-1">{{ "account.form.register" | translate }}</button>
         </form>
       </div>
     </div>
   </div>
 </div>
+

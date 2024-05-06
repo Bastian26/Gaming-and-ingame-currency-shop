@@ -12,7 +12,21 @@
   }
 }
 
-.datepicker {
-  width: 30%;
+.hrdivider {
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
   text-align: center;
 }
+
+.hrdivider span {
+  color: rgba(127, 124, 124, 0.35);
+  position: absolute;
+  top: -11px;
+  left: 43.5%;
+  background: #E9ECEF;
+  padding: 0 20px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+

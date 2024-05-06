@@ -39,33 +39,23 @@
     }
   },
 
-  "title": "Service-Feedback für {{company}}",
-  "name": {
-    "label": "Namen de",
-    "placeholder": "Name eingeben"
-  },
-
-  "gender": {
-    "label": "Geschlecht",
-    "select": "Wähle Geschlecht",
-    "options": {
-      "male": "Männlich",
-      "female": "Weiblich",
-      "other": "Andere"
-    }
-  },
-
-  "comment": {
-    "label": "Kommentar",
-    "placeholder": "Kommentar eingeben"
-  },
-
-  "rating": {
-    "label": "Bewerten Sie unseren Kundenservice:",
-    "options": {
-      "excellent": "Ausgezeichnet",
-      "good": "Gute",
-      "bad": "Schlecht"
+  "account": {
+    "form": {
+      "first-name": "Vorname",
+      "last-name": "Nachname",
+      "user-name": "User-Name",
+      "email": "E-Mail",
+      "tel": "Tel-Nr.",
+      "password": "Passwort",
+      "birthdate": "Geburtsdatum",
+      "address": {
+        "address": "Adresse",
+        "street": "Straße und Haus-Nr.",
+        "postcode": "PLZ",
+        "state": "Staat"
+      },
+      "register": "Registrieren",
+      "sign-in": "Anmelden"
     }
   },
 
