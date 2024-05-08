@@ -20,6 +20,7 @@
       </div>
     </div>
     <div class="right-header-part">
+      <i class="material-icons notification-icon">notifications</i>
       <div class="language-picker" (click)="toggleDropdown()">
         <span class="current-language flag-icon flag-icon-{{selectedLanguage.code | lowercase}}"></span>
         <i class="arrow-icon material-icons">keyboard_arrow_{{isOpen === true ? 'left' : 'down'}}</i>
@@ -33,6 +34,10 @@
       <a routerLink="account" class="account-link">
         <i class="material-icons user-icon" *ngIf="user === null">supervised_user_circle</i>
       </a>
+      <div class="basket-wrapper">
+        <span>10</span>
+        <i class="material-icons basket-icon">shopping_cart</i>
+      </div>
       <div class="verified-user" *ngIf="user !== null">
         <a routerLink="account" class="account-link">
           <span class="welcome-text">{{ 'header.welcome-text' | translate : {name: user.firstName} }}</span>

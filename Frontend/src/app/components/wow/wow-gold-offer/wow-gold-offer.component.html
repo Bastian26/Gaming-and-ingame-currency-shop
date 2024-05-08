@@ -26,8 +26,9 @@
       </ng-template>
     </option>
   </select>
-  <button class="gold-sell-btn" (click)="openGoldSellModal()"><i class="material-icons add-icon">
-    add</i> <span>{{ "wow.gold-seller-btn-text" | translate }}</span>
+  <button class="gold-sell-btn" (click)="openGoldSellModal()" *ngIf="user">
+    <i class="material-icons add-icon">add</i>
+    <span>{{ "wow.gold-seller-btn-text" | translate }}</span>
   </button>
 </div>
 <app-gold-offer-item></app-gold-offer-item>

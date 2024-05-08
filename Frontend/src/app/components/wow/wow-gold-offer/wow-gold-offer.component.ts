@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {server} from "../../../models/server";
 import { euClassicServers, euRetailServers, usClassicServers, usRetailServers } from '../../../data/serverList'
+import {User} from "../../../models/user";
+import {Store} from "@ngrx/store";
+import {AppState} from "../../../store/model/app-state-model";
+import {Subject, takeUntil} from "rxjs";
 
 @Component({
   selector: 'app-wow-gold-offer',
@@ -8,17 +12,26 @@ import { euClassicServers, euRetailServers, usClassicServers, usRetailServers } 
   styleUrls: ['./wow-gold-offer.component.scss']
 })
 export class WowGoldOfferComponent implements OnInit {
+  user: User = null;
   modalGoldSellOpen = false;
   region: string[] = ["EU", "US"];
   fractions: string[] = ["wow.fraction.alliance", "wow.fraction.horde"]
 
   selectedServer: string;
   servers = euRetailServers;
+  ngUnsubscribe = new Subject<void>();
 
-  constructor() { }
+
+  constructor(private store: Store<AppState>) {}
 
   ngOnInit(): void {
     this.selectedServer = euRetailServers[0].value;
+
+    this.store.select(state => state)
+      .pipe(takeUntil(this.ngUnsubscribe))
+      .subscribe(data => {
+        this.user = data?.activeUser?.user;
+      });
   }
 
   onServerChange(selectedValue: string) {
@@ -40,4 +53,10 @@ export class WowGoldOfferComponent implements OnInit {
   closeGoldSellModal(): void {
     this.modalGoldSellOpen = false;
   }
+
+  ngOnDestroy(): void {
+    this.ngUnsubscribe.next();
+    this.ngUnsubscribe.complete();
+  }
+
 }
