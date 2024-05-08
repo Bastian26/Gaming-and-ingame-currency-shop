@@ -15,6 +15,7 @@ public interface UserMapper {
 
     User toUser(UserDto userDto);
 
+    // Ignore the password column for the mapping
     @Mapping(target = "password", ignore = true)
     User signUpToUser(SignUpDto signUpDto);
 }

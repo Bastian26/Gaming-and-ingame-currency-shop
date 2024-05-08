@@ -50,7 +50,7 @@
       "address": {
         "address": "Address",
         "street": "Street and House Number",
-        "postcode": "ZIP",
+        "postalcode": "ZIP",
         "state": "State"
       },
       "register": "Register",

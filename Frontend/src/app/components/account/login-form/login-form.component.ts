@@ -1,5 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {NgbDateStruct} from "@ng-bootstrap/ng-bootstrap";
+import {Address} from "../../../models/Address";
+import {User} from "../../../models/user";
 
 @Component({
   selector: 'app-login-form',
@@ -19,9 +21,9 @@ export class LoginFormComponent implements OnInit {
   userName: string = "";
   password: string = "";
   street: string = "";
-  plz: string = "";
+  postalCode: string = "";
   country: string = "";
-  tel: string = "";
+  telNr: string = "";
   model: NgbDateStruct;
   birthdate: Date;
 
@@ -39,11 +41,19 @@ export class LoginFormComponent implements OnInit {
   }
 
   onSubmitRegister(): void {
+
     this.onSubmitRegisterEvent.emit({
       "firstName": this.firstName,
       "lastName": this.lastName,
       "userName": this.userName,
-      "password": this.password
+      "password": this.password,
+      "email": this.email,
+      "telNr": this.telNr,
+      "address": {
+        "street": this.street,
+        "postalCode": this.postalCode,
+        "country": this.country
+      },
     })
   }
 

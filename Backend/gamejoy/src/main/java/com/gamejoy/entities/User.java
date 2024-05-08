@@ -26,4 +26,15 @@ public class User {
     private String userName;
     @Column(nullable = false)
     private String password;
+
+    @Column(name = "email", nullable = false)
+    private String email;
+
+    @Column(name = "tel_nr", nullable = false)
+    private String telNr;
+
+    @ManyToOne
+    @JoinColumn(name = "address_id")
+    private Address address;
+
 }

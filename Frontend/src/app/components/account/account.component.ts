@@ -60,7 +60,6 @@ export class AccountComponent implements OnInit {
   onRegister(input: any): void {
     this.store.dispatch(LoadingActions.loadingOn());
     setTimeout(() => {
-      // Ihr vorhandener Code hier
     }, 2000); // Verzögerung von 2 Sekunden
     this.axiosService.request(
       "POST",
@@ -69,7 +68,14 @@ export class AccountComponent implements OnInit {
         firstName: input.firstName,
         lastName: input.lastName,
         userName: input.userName,
-        password: input.password
+        password: input.password,
+        email: input.email,
+        telNr: input.telNr,
+        address: {
+          street: input.address.street,
+          postalCode: input.address.postalCode,
+          country: input.address.country,
+        },
       }
     ).then(response => {
       this.axiosService.setAuthToken(response.data.token);
@@ -93,10 +99,13 @@ export class AccountComponent implements OnInit {
         firstName: userResponseData.data.firstName,
         lastName: userResponseData.data.lastName,
         userName: userResponseData.data.userName,
+        email: userResponseData.email,
+        telNr: userResponseData.telNr,
+        address: userResponseData.address,
         token: userResponseData.data.token
       };
 
-      // store in rxjs store
+      // store user in ngrx store
       this.store.dispatch(LoadingActions.loadingOff());
       this.store.dispatch(UserActions.login({ user }));
       console.log("User " + user.userName + " logged in");

@@ -51,7 +51,7 @@
       "address": {
         "address": "Adresse",
         "street": "Straße und Haus-Nr.",
-        "postcode": "PLZ",
+        "postalcode": "PLZ",
         "state": "Staat"
       },
       "register": "Registrieren",

@@ -40,7 +40,7 @@
                 <label class="form-label" for="userName">{{ "account.form.user-name" | translate }}</label>
               </div>
               <div class="form-outline mb-4">
-                <input class="form-control" type="tel" id="tel" name="tel" [(ngModel)]="tel"/>
+                <input class="form-control" type="tel" id="tel" name="tel" [(ngModel)]="telNr"/>
                 <label class="form-label" for="tel">{{ "account.form.tel" | translate }}</label>
               </div>
             </div>
@@ -50,8 +50,8 @@
                 <label class="form-label" for="lastName">{{ "account.form.last-name" | translate }}</label>
               </div>
               <div class="form-outline mb-4">
-                <input class="form-control" type="email" id="email" name="email" [(ngModel)]="email"/>
-                <label class="form-label" for="email">{{ "account.form.email" | translate }}</label>
+                <input class="form-control" type="password" id="loginPassword" name="password" [(ngModel)]="password"/>
+                <label class="form-label" for="loginPassword">{{ "account.form.password" | translate }}</label>
               </div>
               <div class="form-outline mb-4">
                 <div class="datepicker input-group">
@@ -72,6 +72,11 @@
             </div>
           </div>
 
+          <div class="form-outline mb-4">
+            <input class="form-control" type="email" id="email" name="email" [(ngModel)]="email"/>
+            <label class="form-label" for="email">{{ "account.form.email" | translate }}</label>
+          </div>
+
           <div class="hrdivider">
             <hr/>
             <span >{{ "account.form.address.address" | translate }}</span>
@@ -85,8 +90,8 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-outline mb-4">
-                <input class="form-control" type="text" id="plz" name="plz" [(ngModel)]="plz"/>
-                <label class="form-label" for="plz">{{ "account.form.address.postcode" | translate }}</label>
+                <input class="form-control" type="text" id="postalCode" name="postalCode" [(ngModel)]="postalCode"/>
+                <label class="form-label" for="postalCode">{{ "account.form.address.postalcode" | translate }}</label>
               </div>
             </div>
             <div class="col-md-6">
