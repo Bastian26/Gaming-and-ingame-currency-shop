@@ -102,7 +102,7 @@ export class AccountComponent implements OnInit {
         email: userResponseData.email,
         telNr: userResponseData.telNr,
         address: userResponseData.address,
-        token: userResponseData.data.token
+        // token: userResponseData.data.token
       };
 
       // store user in ngrx store

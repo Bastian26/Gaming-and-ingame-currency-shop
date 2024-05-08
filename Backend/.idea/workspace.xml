@@ -1,13 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2248ccc-ce6f-44e6-a143-ebf901d278c6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/goldtrading-deluxe/target/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/goldtrading-deluxe/target/classes/db/changelog/changelog-master.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/goldtrading-deluxe/target/classes/db/changelog/changes/2024-03-08_22-16_create_table.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/goldtrading-deluxe/target/classes/db/changelog/changes/2024-03-08_22-28_remove_test_table.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/goldtrading-deluxe/target/classes/db/changelog/changes/2024-04-08_15-22_create_app_user_table.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/goldtrading-deluxe/target/classes/db/changelog/changes/2024-04-16_22-58_change_login_col_in_app_users.yaml" beforeDir="false" />
+    <list default="true" id="f2248ccc-ce6f-44e6-a143-ebf901d278c6" name="Changes" comment="added first steps of internationalization - added a line to set loff true in state after error occured">
+      <change afterPath="$PROJECT_DIR$/gamejoy/src/main/java/com/gamejoy/entities/Address.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gamejoy/src/main/resources/db/changelog/changes/2024-05-07_09-46_create_address_table_and_add_columns_to_app_user.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Frontend/src/app/models/Address.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamejoy/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gamejoy/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamejoy/src/main/java/com/gamejoy/dto/SignUpDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/gamejoy/src/main/java/com/gamejoy/dto/SignUpDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamejoy/src/main/java/com/gamejoy/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/gamejoy/src/main/java/com/gamejoy/dto/UserDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamejoy/src/main/java/com/gamejoy/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/gamejoy/src/main/java/com/gamejoy/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamejoy/src/main/java/com/gamejoy/mappers/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/gamejoy/src/main/java/com/gamejoy/mappers/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamejoy/src/main/java/com/gamejoy/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/gamejoy/src/main/java/com/gamejoy/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/app/components/account/account.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/app/components/account/account.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/app/components/account/login-form/login-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/app/components/account/login-form/login-form.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/app/components/account/login-form/login-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/app/components/account/login-form/login-form.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/app/models/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/app/models/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/assets/i18n/de.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/assets/i18n/de.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/assets/i18n/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/assets/i18n/en.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,9 +30,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2fHJdl2DLsLRHNDGljKAs5UQn1b" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -29,10 +45,16 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "F:/Daten/IT/Eigene Projekte/Gaming-and-ingame-currency-shop/Backend/gamejoy/pom.xml",
+    "last_opened_file_path": "C:/Daten/Eigene Projekte Web/Gaming-and-ingame-currency-shop/Backend/gamejoy/pom.xml",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2022.3.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -45,10 +67,28 @@
       <option name="presentableId" value="Default" />
       <updated>1713452159621</updated>
       <workItem from="1713452160610" duration="156000" />
+      <workItem from="1714477755559" duration="604000" />
+      <workItem from="1714496737989" duration="1370000" />
+      <workItem from="1714658647256" duration="157000" />
+      <workItem from="1714726002110" duration="32000" />
+      <workItem from="1715090316714" duration="54000" />
+      <workItem from="1715151593414" duration="21000" />
     </task>
+    <task id="LOCAL-00001" summary="added first steps of internationalization - added a line to set loff true in state after error occured">
+      <created>1714498561247</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1714498561247</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added first steps of internationalization - added a line to set loff true in state after error occured" />
+    <option name="LAST_COMMIT_MESSAGE" value="added first steps of internationalization - added a line to set loff true in state after error occured" />
   </component>
 </project>
