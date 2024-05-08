@@ -33,8 +33,11 @@ public class User {
     @Column(name = "tel_nr", nullable = false)
     private String telNr;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role")
+    private UserRole userRole;
+
     @ManyToOne
     @JoinColumn(name = "address_id")
     private Address address;
-
 }

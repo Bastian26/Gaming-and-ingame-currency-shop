@@ -30,14 +30,14 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: country
-                  type: VARCHAR(255)
+                  type: VARCHAR(100)
                   constraints:
                     nullable: false
 
   - changeSet:
       id: 2024-05-07_09-46_add_columns_to_app_user
       author: bastian
-      comment: add several columns to app_user and link with foreign key to address table
+      comment: add enum column to app_user and link with foreign key to address table
       changes:
         - addColumn:
             tableName: app_user
@@ -55,3 +55,8 @@ databaseChangeLog:
                     nullable: false
                     foreignKeyName: address_id
                     references: address(address_id)
+              - column:
+                  name: role
+                  type: VARCHAR(30)
+                  constraints:
+                    nullable: false

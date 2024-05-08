@@ -1,6 +1,7 @@
 package com.gamejoy.dto;
 
 import com.gamejoy.entities.Address;
+import com.gamejoy.entities.UserRole;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,5 +20,6 @@ public class UserDto {
     private String email;
     private String telNr;
     private Address address;
+    private UserRole userRole;
     private String token;
 }

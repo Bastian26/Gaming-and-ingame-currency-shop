@@ -6,6 +6,7 @@ import com.gamejoy.dto.SignUpDto;
 import com.gamejoy.dto.UserDto;
 import com.gamejoy.entities.Address;
 import com.gamejoy.entities.User;
+import com.gamejoy.entities.UserRole;
 import com.gamejoy.exceptions.AppException;
 import com.gamejoy.mappers.UserMapper;
 import com.gamejoy.repositories.UserRepository;
@@ -52,6 +53,7 @@ public class UserService {
         user.setPassword(passwordEncoder.encode(CharBuffer.wrap(signUpDto.password())));
         Address savedAddress = addressRepository.save(user.getAddress());
         user.setAddress(savedAddress);
+        user.setUserRole(UserRole.USER);
         User savedUser = userRepository.save(user);
         LOGGER.info(String.format("User %s registered", user.getUserName()));
         return userMapper.toUserDto(savedUser);

@@ -1,4 +1,5 @@
 import {Address} from "./Address";
+import {UserRole} from "./UserRole";
 
 export interface User {
   id?: number;
@@ -8,6 +9,7 @@ export interface User {
   email?: string;
   telNr?: string;
   address?: Address;
+  userRole?: UserRole;
   token?: string;
 }
 
