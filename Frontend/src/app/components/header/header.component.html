@@ -34,7 +34,7 @@
       <a routerLink="account" class="account-link">
         <i class="material-icons user-icon" *ngIf="user === null">supervised_user_circle</i>
       </a>
-      <div class="basket-wrapper">
+      <div class="basket-wrapper" (click)="navigate('/basket')">
         <span>10</span>
         <i class="material-icons basket-icon">shopping_cart</i>
       </div>

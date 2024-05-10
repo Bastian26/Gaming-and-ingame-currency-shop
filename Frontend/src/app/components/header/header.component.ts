@@ -55,18 +55,6 @@ export class HeaderComponent implements OnInit {
     console.log(this.searchTerm);
   }
 
-  // changeSiteLanguage(localeCode: string): void {
-  //   const selectedLanguage = this.languages
-  //     .find((language) => language.code === localeCode)
-  //     ?.name.toString();
-  //   if (selectedLanguage) {
-  //     this.siteLanguage = selectedLanguage;
-  //     this.translate.use(localeCode);
-  //   }
-  //   const currentLanguage = this.translate.currentLang;
-  //   console.log('currentLanguage', currentLanguage);
-  // }
-
   ngOnDestroy(): void {
     this.ngUnsubscribe.next();
     this.ngUnsubscribe.complete();

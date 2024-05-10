@@ -9,10 +9,12 @@ import { PaymentOptionsComponent } from './components/payment-options/payment-op
 import { HelpPageComponent } from './components/help-page/help-page.component';
 import { WowRetailGoldComponent } from './components/wow/wow-retail-gold/wow-retail-gold.component';
 import { WowClassicGoldComponent } from './components/wow/wow-classic-gold/wow-classic-gold.component';
+import {BasketComponent} from "./components/basket/basket.component";
 
 const routes: Routes = [
   { path: '', component: MainPageComponent },
   { path: 'wow-overview', component: WowOverviewComponent },
+  { path: 'basket', component: BasketComponent },
   {
     path: 'wow',
     component: WowComponent,

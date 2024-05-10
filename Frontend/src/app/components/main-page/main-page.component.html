@@ -1,1 +1,12 @@
-<p>main-page works!</p>
+<div class="img-carousel-container">
+  <carousel>
+    <slide *ngFor="let image of images">
+      <img [src]="image.url" class="slider-image" alt="Slide {{image.id}}">
+      <div class="carousel-caption slider-text">
+        <h1>{{ image.title }}</h1>
+        <p>{{ image.description }}</p>
+        <button>Kaufen</button>
+      </div>
+    </slide>
+  </carousel>
+</div>

@@ -37,6 +37,8 @@ import { SwitcherTabComponent } from './components/wow/switcher-tab/switcher-tab
 import { NgxTranslateModule } from './translate/translate.module';
 import { GoldOfferItemComponent } from './components/wow/wow-gold-offer/gold-offer-item/gold-offer-item.component';
 import {NgbInputDatepicker} from "@ng-bootstrap/ng-bootstrap";
+import { BasketComponent } from './components/basket/basket.component';
+import {CarouselModule} from "ngx-bootstrap/carousel";
 
 @NgModule({
   declarations: [
@@ -59,29 +61,31 @@ import {NgbInputDatepicker} from "@ng-bootstrap/ng-bootstrap";
     ButtonsComponent,
     SwitcherTabComponent,
     GoldOfferItemComponent,
+    BasketComponent,
 
   ],
-    imports: [
-        AppRoutingModule,
-        MatSelectModule,
-        MatInputModule,
-        MatButtonModule,
-        BrowserModule,
-        MatMenuModule,
-        BrowserAnimationsModule,
-        MatFormFieldModule,
-        MatIconModule,
-        FormsModule,
-        CommonModule,
-        NgxTranslateModule,
-        MatProgressSpinner,
-        StoreModule.forRoot(reducers),
-        StoreDevtoolsModule.instrument({
-            maxAge: 25, // Retains last 25 states
-            logOnly: environment.production, // Restrict extension to log-only mode
-        }),
-        NgbInputDatepicker,
-    ],
+  imports: [
+    AppRoutingModule,
+    MatSelectModule,
+    MatInputModule,
+    MatButtonModule,
+    BrowserModule,
+    MatMenuModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatIconModule,
+    FormsModule,
+    CommonModule,
+    NgxTranslateModule,
+    MatProgressSpinner,
+    StoreModule.forRoot(reducers),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+      logOnly: environment.production, // Restrict extension to log-only mode
+    }),
+    NgbInputDatepicker,
+    CarouselModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
