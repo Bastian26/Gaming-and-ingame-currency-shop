@@ -39,6 +39,8 @@ import { GoldOfferItemComponent } from './components/wow/wow-gold-offer/gold-off
 import {NgbInputDatepicker} from "@ng-bootstrap/ng-bootstrap";
 import { BasketComponent } from './components/basket/basket.component';
 import {CarouselModule} from "ngx-bootstrap/carousel";
+import {MatTab, MatTabGroup} from "@angular/material/tabs";
+import {MatCell, MatHeaderCell, MatHeaderRow, MatRow, MatTable} from "@angular/material/table";
 
 @NgModule({
   declarations: [
@@ -85,6 +87,13 @@ import {CarouselModule} from "ngx-bootstrap/carousel";
     }),
     NgbInputDatepicker,
     CarouselModule,
+    MatTabGroup,
+    MatTab,
+    MatTable,
+    MatHeaderCell,
+    MatCell,
+    MatHeaderRow,
+    MatRow,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,1 +1,22 @@
-<p>account-details works!</p>
+<div id="profile-container">
+  <mat-tab-group id="profile-tab-container">
+    <mat-tab label="Acccount">
+      <div id="tab-content">
+        <h1>Personal Data</h1>
+        <h2>Ingame Currency Amount (Seller option)</h2>
+        Icon WoW Gold Retail    Amount
+        Icon Wow Gold Classic
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+          ....
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+    </mat-tab>
+    <mat-tab label="General Settings"> Content 2 </mat-tab>
+    <mat-tab label="Orders"> Content 3 </mat-tab>
+    <mat-tab label="Change Password"> Content 4 </mat-tab>
+  </mat-tab-group>
+</div>
+
