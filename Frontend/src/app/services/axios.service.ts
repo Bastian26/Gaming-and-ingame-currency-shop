@@ -13,14 +13,14 @@ export class AxiosService {
   }
 
   getAuthToken(): string | null {
-    return window.localStorage.getItem("auth_token");
+    return window.sessionStorage.getItem("auth_token");
   }
 
   setAuthToken(token: string | null): void {
     if (token != null) {
-      return window.localStorage.setItem("auth_token", token);
+      return window.sessionStorage.setItem("auth_token", token);
     } else {
-      window.localStorage.removeItem("auth_token");
+      window.sessionStorage.removeItem("auth_token");
     }
   }
 

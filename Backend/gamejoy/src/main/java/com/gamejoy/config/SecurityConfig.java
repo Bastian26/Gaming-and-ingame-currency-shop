@@ -30,29 +30,4 @@ public class SecurityConfig {
 
         return httpSecurity.build();
     }
-
-//    @Bean
-//    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
-//        httpSecurity.csrf(csrf -> csrf.disable())
-//                        .authorizeHttpRequests((requests) -> requests
-//                            .requestMatchers("/myAccount", "/myBalance", "/myLoans", "/myCards").authenticated()
-//                            .requestMatchers("/**", "/messages").permitAll())
-//                        .formLogin(Customizer.withDefaults())
-//                        .httpBasic(Customizer.withDefaults())
-//                        .sessionManagement(session -> session
-//                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS));;
-//        return httpSecurity.build();
-//    }
-//    @Bean
-//    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
-//        httpSecurity.csrf(csrf -> csrf.disable())
-//                .authorizeRequests(authorizeRequests -> authorizeRequests
-//                        .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
-//                        .antMatchers("/myAccount", "/myBalance", "/myLoans", "/myCards").authenticated()
-//                        .antMatchers(HttpMethod.POST, "/login").permitAll()
-//                        .antMatchers("/**", "/messages").permitAll())
-//                .formLogin(Customizer.withDefaults())
-//                .httpBasic(Customizer.withDefaults());
-//        return httpSecurity.build();
-//    }
 }

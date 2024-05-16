@@ -3,9 +3,9 @@ import {UserRole} from "./UserRole";
 
 export interface User {
   id?: number;
-  firstName?: string;
-  lastName?: string;
-  userName?: string;
+  firstName: string;
+  lastName: string;
+  userName: string;
   email?: string;
   telNr?: string;
   address?: Address;

@@ -9,8 +9,8 @@
     width: 100%;
     margin: 10px auto;
 
-    #tab-content {
-      margin-top: 10px;
+    .tab-content {
+      margin: 12px auto;
       background: rgba(250, 250, 250, 0.9);
       padding: 10px 20px;
       border-radius: 5px;
@@ -22,6 +22,29 @@
       table {
         width: 100%;
         height: fit-content;
+      }
+
+      .table {
+        margin: 14px auto;
+        border-radius: 5px;
+
+        .increment-btn {
+          width: 6%;
+        }
+
+        .decrement-btn {
+          width: 6%;
+        }
+
+        .amount-input {
+          display: inline;
+          width: 30%;
+          margin: 6px 10px 0 10px;
+        }
+
+        .icon {
+          width: 20px;
+        }
       }
     }
   }

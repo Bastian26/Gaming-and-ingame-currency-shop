@@ -60,7 +60,8 @@ export class AccountComponent implements OnInit {
   onRegister(input: any): void {
     this.store.dispatch(LoadingActions.loadingOn());
     setTimeout(() => {
-    }, 2000); // Verzögerung von 2 Sekunden
+    }, 2000);
+    // todo: später in einen service auslagern
     this.axiosService.request(
       "POST",
       "/register",

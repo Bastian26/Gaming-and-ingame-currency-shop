@@ -18,6 +18,12 @@ import { CommonModule } from "@angular/common";
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { environment } from "../environments/environment";
 import { MatProgressSpinner } from "@angular/material/progress-spinner";
+import { MatTableModule } from '@angular/material/table'
+import {MatTab, MatTabGroup} from "@angular/material/tabs";
+import {MatCell, MatHeaderCell, MatHeaderRow, MatRow, MatTable} from "@angular/material/table";
+import {NgbInputDatepicker} from "@ng-bootstrap/ng-bootstrap";
+import {CarouselModule} from "ngx-bootstrap/carousel";
+import { NgxTranslateModule } from './translate/translate.module';
 
 import { WowComponent } from './components/wow/wow.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
@@ -34,13 +40,9 @@ import { WelcomeContentComponent } from './components/account/welcome-content/we
 import { LoginFormComponent } from './components/account/login-form/login-form.component';
 import { ButtonsComponent } from './components/account/buttons/buttons.component';
 import { SwitcherTabComponent } from './components/wow/switcher-tab/switcher-tab.component';
-import { NgxTranslateModule } from './translate/translate.module';
 import { GoldOfferItemComponent } from './components/wow/wow-gold-offer/gold-offer-item/gold-offer-item.component';
-import {NgbInputDatepicker} from "@ng-bootstrap/ng-bootstrap";
 import { BasketComponent } from './components/basket/basket.component';
-import {CarouselModule} from "ngx-bootstrap/carousel";
-import {MatTab, MatTabGroup} from "@angular/material/tabs";
-import {MatCell, MatHeaderCell, MatHeaderRow, MatRow, MatTable} from "@angular/material/table";
+
 
 @NgModule({
   declarations: [
@@ -94,6 +96,7 @@ import {MatCell, MatHeaderCell, MatHeaderRow, MatRow, MatTable} from "@angular/m
     MatCell,
     MatHeaderRow,
     MatRow,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent],
