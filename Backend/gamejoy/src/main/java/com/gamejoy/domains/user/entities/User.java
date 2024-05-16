@@ -36,7 +36,7 @@ public class User {
     @Column(name = "user_name", nullable = false)
     private String userName;
     // Custom validator - UsernameValidator
-    @ValidPassword
+//    @ValidPassword
     @Column(nullable = false)
     private String password;
     @NotNull

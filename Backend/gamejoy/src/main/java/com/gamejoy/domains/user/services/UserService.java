@@ -18,6 +18,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import com.gamejoy.config.validation.PasswordValidator;
 
 import java.nio.CharBuffer;
 import java.util.Optional;
@@ -31,6 +32,7 @@ public class UserService {
     private final AddressRepository addressRepository;
     private final PasswordEncoder passwordEncoder;
     private final UserMapper userMapper;
+    private final PasswordValidator passwordValidator;
 
     public UserDto login(CredentialDto credentialDto) {
         User user = userRepository.findByUserName(credentialDto.userName())
@@ -50,6 +52,12 @@ public class UserService {
         if (oUser.isPresent()) {
             throw new AppException("User already exists", HttpStatus.BAD_REQUEST);
         }
+        // Validierung des Passworts
+        if (!passwordValidator.isValid(new String(signUpDto.password()), null)) {
+            throw new AppException("Invalid password", HttpStatus.BAD_REQUEST);
+        }
+
+
         User user = userMapper.signUpToUser(signUpDto);
         // encode password with passwordEncoder
         user.setPassword(passwordEncoder.encode(CharBuffer.wrap(signUpDto.password())));
