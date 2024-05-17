@@ -55,7 +55,58 @@
         "state": "Staat"
       },
       "register": "Registrieren",
-      "sign-in": "Anmelden"
+      "sign-in": "Anmelden",
+      "logout": "Abmelden"
+    },
+    "welcome-page": {
+      "headline": "Willkommen bei GAMEJOY!",
+      "login-text": "Melde dich an um deine Accountdaten zu sehen."
+    },
+    "account-info": {
+      "personal-data": {
+        "header-text": "Personal Data",
+        "sub-text": "Here you can view and edit your personal information"
+      }
+    },
+    "general-settings": {
+
+    },
+    "orders": {
+
+    },
+    "change-password": {
+      "header-text": "Passwort Ändern",
+      "sub-text": "Hier können Sie Ihr Passwort ändern",
+      "old-password-text": "Altes Passwort",
+      "new-password-text": "Neues Passwort",
+      "confirm-new-password-text": "Passwortbestätigung",
+      "confirm-btn": "Ändern",
+      "password-requirements": {
+        "header-text": "Passwortanforderungen:",
+        "requirements": {
+          "min-length": "muss 8 Zeichen lang sein",
+          "upper-and-lowercase": "muss mind. 1 Groß- und 1 Kleinbuchstabe enthalten",
+          "must-contain-numbers": "muss Zahlen enthalten",
+          "must-contain-spec-charcacters": "muss Sonderzeichen enthalten"
+        },
+        "password-strength": {
+          "weak": "Schwach",
+          "medium": "Mittel",
+          "strong": "Stark",
+          "very-strong:": "Sehr Stark"
+        }
+      }
+    },
+    "game-currencies": {
+      "header-text": "Ingame-Währungsmenge (Verkäuferoption)",
+      "sub-text": "Hier können Sie die Ingame-Währungen für Ihr Konto ausgleichen/anpassen",
+      "confirm-btn-text": "Änderungen bestätigen",
+      "table": {
+        "currency": "Währung",
+        "currency-name": "Währungsname",
+        "game": "Spiel",
+        "change-amount": "Change amount"
+      }
     }
   },
 

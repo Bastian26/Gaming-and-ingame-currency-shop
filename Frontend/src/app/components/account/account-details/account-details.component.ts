@@ -27,12 +27,16 @@ export interface CurrencyElement {
   styleUrls: ['./account-details.component.scss']
 })
 export class AccountDetailsComponent implements OnInit {
-  displayedColumns: string[] = ['icon', 'currenyName', 'gameName', 'amount'];
+  displayedColumns: string[] = ["icon", "currenyName", "gameName", "amount"];
   dataSource = ELEMENT_DATA;
   oldPassword: string = "";
   newPassword: string = "";
   newPasswordRepeat: string = "";
   minLengthOf8: boolean;
+  containsUpperAndLowercaseLetter: boolean;
+  containsNumber: boolean;
+  containsSpecialCharacter: boolean;
+  passwordStrengthText: string = "Weak";
 
   constructor() {
   }
@@ -68,29 +72,46 @@ export class AccountDetailsComponent implements OnInit {
     return `../../../../assets/img/icons/${currencyName.toLowerCase()}Icon.png`;
   }
 
-  passwordValidation(validationRequirement: string): boolean {
-    console.log(this.newPassword);
-    switch (validationRequirement) {
-      case "minLengthOf8":
-        return this.minLengthOf8 = this.newPassword.length >= 8;
+  passwordValidation(): void {
+    // Has min length of 8
+    this.newPassword.length >= 8 ? this.minLengthOf8 = true : this.minLengthOf8 = false;
 
-/*      case "minUppercaseAndLowercaseLetter":
-        //  password must contain at least one uppercase and one lowercase letter
-        const hasUppercase = /[A-Z]/.test(this.newPassword);
-        const hasLowercase = /[a-z]/.test(this.newPassword);
-        return hasUppercase && hasLowercase;
+    // Has upper and lower case letter
+    (/[A-Z]/.test(this.newPassword) && /[a-z]/.test(this.newPassword)) ?
+      this.containsUpperAndLowercaseLetter = true : this.containsUpperAndLowercaseLetter = false;
 
-      case "containsNumber":
-        // Checks if password contains at least 1 number
-        return /[0-9]/.test(this.newPassword);
+    // contains numbers (at least 1)
+    (/[0-9]/.test(this.newPassword)) ? this.containsNumber = true : this.containsNumber = false;
 
-      case "containsSpecialCharacter":
-        // Checks if password contains at least 1 special character
-        return /[!@#$%^&*(),.?":{}|<>]/.test(this.newPassword);*/
+    // contains special character (at least 1)
+    (/[!@#$%^&*(),.?":{}|<>]/.test(this.newPassword)) ? this.containsSpecialCharacter = true
+      : this.containsSpecialCharacter = false;
+  }
 
-      default:
-        return false;
+    checkNewPasswordRequirements(parameter: string): boolean {
+    return true;
+
+
+   /* if (this.minLengthOf8 && this.containsUpperAndLowercaseLetter && this.containsNumber
+      && this.containsSpecialCharacter && this.oldPassword.length > 1
+      && (this.newPassword === this.newPasswordRepeat)) {
+      return true;
     }
+    return false;*/
+  }
+
+
+  allRequirementsAchieved(): boolean {
+    if (this.minLengthOf8 && this.containsUpperAndLowercaseLetter && this.containsNumber
+      && this.containsSpecialCharacter && this.oldPassword.length > 1
+      && (this.newPassword === this.newPasswordRepeat)) {
+      return true;
+    }
+    return false;
+  }
+
+  changePassword() {
+
   }
 }
 

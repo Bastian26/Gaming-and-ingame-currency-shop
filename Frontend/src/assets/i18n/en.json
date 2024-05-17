@@ -54,7 +54,58 @@
         "state": "State"
       },
       "register": "Register",
-      "sign-in": "Sign In"
+      "sign-in": "Sign In",
+      "logout": "Logout"
+    },
+    "welcome-page": {
+      "headline": "Welcome to GAMEJOY!",
+      "login-text": "Log in to see your account details."
+    },
+    "account-info": {
+      "personal-data": {
+        "header-text": "Personal Data",
+        "sub-text": "Here you can view and edit your personal information"
+      }
+    },
+    "general-settings": {
+
+    },
+    "orders": {
+
+    },
+    "change-password": {
+      "header-text": "Change password",
+      "sub-text": "Here you can change your password",
+      "old-password-text": "Old password",
+      "new-password-text": "New password",
+      "confirm-new-password-text": "Password confirmation",
+      "confirm-btn": "Change",
+      "password-requirements": {
+        "header-text": "Password requirements:",
+        "requirements": {
+          "min-length": "must be 8 characters long",
+          "upper-and-lowercase": "must have 1 uppercase and 1 lowercase letter",
+          "must-contain-numbers": "must contain at least 1 number",
+          "must-contain-spec-charcacters": "must contain special characters"
+        },
+        "password-strength": {
+          "weak": "Weak",
+          "medium": "Medium",
+          "strong": "Strong",
+          "very-strong:": "Very Strong"
+        }
+      }
+    },
+    "game-currencies": {
+      "header-text": "Ingame Currency Amount (Seller option)",
+      "sub-text": "Here you can balance the ingame currencys for your Account",
+      "confirm-btn-text": "Confirm change",
+      "table": {
+        "currency": "Währung",
+        "currency-name": "Währungsname",
+        "game": "Spiel",
+        "chaneg-amount": "Change amount"
+      }
     }
   },
 
