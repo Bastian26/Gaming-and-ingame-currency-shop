@@ -43,7 +43,7 @@
     "form": {
       "first-name": "Vorname",
       "last-name": "Nachname",
-      "user-name": "User-Name",
+      "user-name": "Username",
       "email": "E-Mail",
       "tel": "Tel-Nr.",
       "password": "Passwort",

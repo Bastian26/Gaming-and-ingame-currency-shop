@@ -7,7 +7,67 @@
     </mat-tab>
     <mat-tab label="General Settings"> Content 2 </mat-tab>
     <mat-tab label="Orders"> Content 3 </mat-tab>
-    <mat-tab label="Change Password"> Content 4 </mat-tab>
+    <mat-tab label="Change Password">
+      <div class="tab-content">
+        <h1>Change password</h1>
+        <h2>Here you can change your password</h2>
+
+        <div class="row">
+          <div class="col-md-4">
+            <form>
+              <div class="form-group">
+                <label for="oldPassword">Old Password</label>
+                <input type="password" class="form-control" id="oldPassword" placeholder="Old Password"
+                       [(ngModel)]="oldPassword" name="oldPassword">
+              </div>
+              <div class="form-group">
+                <label for="newPassword">New Password</label>
+                <input type="password" class="form-control" id="newPassword" placeholder="New Password"
+                       [(ngModel)]="newPassword" name="newPassword" (input)="passwordValidation('minLengthOf8')">
+              </div>
+              <div class="form-group">
+                <label for="newPasswordRepeat">Confirm Password</label>
+                <input type="password" class="form-control" id="newPasswordRepeat"
+                       placeholder="Password Confirmation" [(ngModel)]="newPasswordRepeat" name="newPasswordRepeat">
+              </div>
+              <button type="submit" class="btn btn-primary">Change</button>
+            </form>
+          </div>
+          <div class="col-md-8">
+            <div id="password-strength-container">
+              <h3>Password requirements:</h3>
+              <ul>
+                <li [ngClass]="{'valid-password': minLengthOf8,
+                'invalid': !minLengthOf8}">
+                  must be 8 characters long
+                </li>
+               <!-- <li [ngClass]="{'valid-password': passwordValidation('minUppercaseAndLowercaseLetter'),
+                'invalid': !passwordValidation('minUppercaseAndLowercaseLetter')}">
+                  must have at least 1 uppercase and 1 lowercase letter
+                </li>
+                <li [ngClass]="{'valid-password': passwordValidation('containsNumber'),
+                'invalid': !passwordValidation('containsNumber')}">
+                  must contain numbers
+                </li>
+                <li [ngClass]="{'valid-password': passwordValidation('containsSpecialCharacter'),
+                'invalid': !passwordValidation('containsSpecialCharacter')}">
+                  must contain special characters
+                </li>-->
+              </ul>
+              <p>Password strength: Weak</p>
+              <div id="password-strength-display">
+                <div class="password-strength-display-item"></div>
+                <div class="password-strength-display-item"></div>
+                <div class="password-strength-display-item"></div>
+                <div class="password-strength-display-item"></div>
+              </div>
+              <div id="arrow"></div>
+              <div id="arrow-border"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
     <mat-tab label="Game Currencys">
       <div class="tab-content">
         <h1>Ingame Currency Amount (Seller option)</h1>

@@ -42,7 +42,7 @@
     "form": {
       "first-name": "First Name",
       "last-name": "Last Name",
-      "user-name": "User Name",
+      "user-name": "Username",
       "email": "Email",
       "tel": "Tel",
       "password": "Password",

@@ -29,6 +29,10 @@ export interface CurrencyElement {
 export class AccountDetailsComponent implements OnInit {
   displayedColumns: string[] = ['icon', 'currenyName', 'gameName', 'amount'];
   dataSource = ELEMENT_DATA;
+  oldPassword: string = "";
+  newPassword: string = "";
+  newPasswordRepeat: string = "";
+  minLengthOf8: boolean;
 
   constructor() {
   }
@@ -63,4 +67,30 @@ export class AccountDetailsComponent implements OnInit {
     // Beispiel: Rückgabe des Pfads zum Icon basierend auf dem Währungsnamen
     return `../../../../assets/img/icons/${currencyName.toLowerCase()}Icon.png`;
   }
+
+  passwordValidation(validationRequirement: string): boolean {
+    console.log(this.newPassword);
+    switch (validationRequirement) {
+      case "minLengthOf8":
+        return this.minLengthOf8 = this.newPassword.length >= 8;
+
+/*      case "minUppercaseAndLowercaseLetter":
+        //  password must contain at least one uppercase and one lowercase letter
+        const hasUppercase = /[A-Z]/.test(this.newPassword);
+        const hasLowercase = /[a-z]/.test(this.newPassword);
+        return hasUppercase && hasLowercase;
+
+      case "containsNumber":
+        // Checks if password contains at least 1 number
+        return /[0-9]/.test(this.newPassword);
+
+      case "containsSpecialCharacter":
+        // Checks if password contains at least 1 special character
+        return /[!@#$%^&*(),.?":{}|<>]/.test(this.newPassword);*/
+
+      default:
+        return false;
+    }
+  }
 }
+

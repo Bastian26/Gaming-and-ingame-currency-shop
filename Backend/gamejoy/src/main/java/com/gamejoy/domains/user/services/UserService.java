@@ -67,7 +67,10 @@ public class UserService {
         User savedUser = userRepository.save(user);
         LOGGER.info(String.format("User %s registered", user.getUserName()));
 
-        //todo: für jeden erstellten benutzer müssen initalwerte in der user_ingame_currencies table angelegt werden
+        /**
+         * Create UserIngameCurrency initial value data - so every new user have at least a amount of 0
+         * for every ingame currency
+         */
         userIngameCurrencyService.createInitialDataForUserIngameCurrencies(user.getId());
 
         return userMapper.toUserDto(savedUser);
@@ -91,6 +94,9 @@ public class UserService {
         Optional<User> userO = userRepository.findById(id);
         User user = null;
 
+        if (!passwordValidator.isValid(new String(password), null)) {
+            throw new AppException("Invalid password", HttpStatus.BAD_REQUEST);
+        }
         if (userO.isPresent()) {
             user = userO.get();
             user.setPassword(passwordEncoder.encode(CharBuffer.wrap(password)));

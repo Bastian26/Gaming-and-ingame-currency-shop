@@ -15,6 +15,65 @@
       padding: 10px 20px;
       border-radius: 5px;
 
+
+      #password-strength-container {
+        position: relative;
+        background-color: #FFFFFF;
+        width: 51%;
+        min-height: fit-content;
+        padding: 15px;
+        margin: 0 0 80px 90px;
+        border: 1px solid rgba(150, 150, 150, 0.4);
+
+        .valid-password {
+          color: green;
+        }
+
+        #password-strength-display {
+          display: flex;
+          justify-content: space-between;
+          width: 55%;
+
+          .password-strength-display-item {
+            width: 22%;
+            height: 30px;
+            background: rgba(100, 100, 100, 0.35);
+          }
+        }
+
+        #arrow {
+          position: absolute;
+          bottom: 43%;
+          left: -31.5px;
+          width: 0;
+          height: 0;
+          border-top: 17px solid transparent;
+          border-right: 17px solid #FFFFFF;
+          border-bottom: 17px solid transparent;
+          border-left: 17px solid transparent;
+          z-index: 10;
+        }
+
+        #arrow-border {
+          position: absolute;
+          bottom: 42.5%;
+          left: -34px;
+          width: 0;
+          height: 0;
+          border-top: 17.5px solid transparent;
+          border-right: 17.5px solid rgba(150, 150, 150, 0.4);
+          border-bottom: 17.5px solid transparent;
+          border-left: 17.5px solid transparent;
+          z-index: 5;
+        }
+
+
+        button {
+          margin: 30px 0;
+          width: 35%;
+        }
+      }
+
       h1 {
         font-weight: 500;
       }
