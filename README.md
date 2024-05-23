@@ -1,7 +1,7 @@
 # Gamejoy - GameShop and ingame currency trading platform (Angular and Spring Boot)
 On this website (is only hobby project - no real exsiting website) people can trade (buy/sell) ingame currency like gold and also buy Games/Keys/Boosts.
 
-### Used Technologies
+## <u>Used Technologies</u>
 
 - **Internationalization**: Implemented using ngx-translate for managing translations.
 - **State Management**: Handled with NgRx for managing application state.
