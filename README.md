@@ -16,8 +16,8 @@ On this website (is only hobby project - no real exsiting website) people can tr
 <br/><br/>
 
 ### Ingame currency trading Page
-<br/><br/>
 ![Gamejoy-page2](https://github.com/Bastian26/Gaming-and-ingame-currency-shop/assets/60541600/bc5a757e-8422-4cb9-9476-ddc91a5e7b12)
+<br/><br/>
 
 
 
