@@ -1,5 +1,6 @@
 package com.gamejoy.config.security;
 
+import com.gamejoy.config.security.filters.JwtAuthFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,5 +1,6 @@
-package com.gamejoy.config.security;
+package com.gamejoy.config.security.filters;
 
+import com.gamejoy.config.security.UserAuthProvider;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -11,7 +12,7 @@ import org. springframework.http.HttpHeaders;
 
 import java.io.IOException;
 
-// Interceptor as HTTP filter for incoming HTTP requests and validate JWT token
+// Interceptor as HTTP filter for incoming HTTP requests and validate JWT token (of Header)
 @RequiredArgsConstructor
 public class JwtAuthFilter extends OncePerRequestFilter {
 
