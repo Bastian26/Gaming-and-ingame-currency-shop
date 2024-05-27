@@ -6,6 +6,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
 import org. springframework.http.HttpHeaders;
@@ -34,8 +35,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
                     SecurityContextHolder.getContext().setAuthentication(userAuthProvider.validateToken(authElements[1]));
                 } catch (RuntimeException exception) {
                     SecurityContextHolder.clearContext();
-                    throw exception;
-                }
+                    throw new BadCredentialsException("Invalid JWT token", exception);                }
             }
         }
 
