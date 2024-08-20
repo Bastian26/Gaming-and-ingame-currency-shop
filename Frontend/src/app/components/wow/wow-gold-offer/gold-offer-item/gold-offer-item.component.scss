@@ -59,6 +59,10 @@
     position: absolute;
     right: 30px;
     cursor: pointer;
+
+    &:hover {
+      background-color: #145014;
+    }
   }
 
   &:hover {

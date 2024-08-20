@@ -1,6 +1,32 @@
 <app-modal class="modal-overlay" *ngIf="modalGoldSellOpen" (close)="closeGoldSellModal()">
+    <!-- TODO: später in wow-sell-gold ausalgern -->
     <div class="modal-content">
       <!-- Modal contents here -->
+      <form [formGroup]="sellGoldForm" (ngSubmit)="sellGold()">
+        <div>
+          <label for="sell-price">Verkaupfspreis / 100k</label>
+          <input id="sell-price" type="number" formControlName="sellPrice">
+        </div>
+        <div>
+          <label for="max-quantity">Max. Menge</label>
+          <input id="max-quantity" type="number" formControlName="maxQuantity">
+        </div>
+        <div>
+          <label for="max-fraction">Max. Menge</label>
+          <select id='sell-fraction' formControlName="sellFraction"[(ngModel)]="fractions">
+            <option *ngFor="let item of fractions" [value]="item">
+              {{item}}
+            </option>
+          </select>
+
+        </div>
+        <div>
+          <label for="sell-server">Server</label>
+          <input id="sell-server" type="text" formControlName="sellServer">
+        </div>
+
+      </form>
+      <button class="button" type="submit">Verkaufen</button>
       <button (click)="closeGoldSellModal()">Schließen</button>
     </div>
 </app-modal>

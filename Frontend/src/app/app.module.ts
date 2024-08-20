@@ -7,7 +7,7 @@ import { WowOverviewComponent } from './components/wow-overview/wow-overview.com
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { MatSelectModule } from "@angular/material/select";
 import { MatInputModule } from '@angular/material/input';
@@ -42,6 +42,7 @@ import { ButtonsComponent } from './components/account/buttons/buttons.component
 import { SwitcherTabComponent } from './components/wow/switcher-tab/switcher-tab.component';
 import { GoldOfferItemComponent } from './components/wow/wow-gold-offer/gold-offer-item/gold-offer-item.component';
 import { BasketComponent } from './components/basket/basket.component';
+import { WowSellGoldComponent } from './components/wow/wow-sell-gold/wow-sell-gold.component';
 
 
 @NgModule({
@@ -66,6 +67,7 @@ import { BasketComponent } from './components/basket/basket.component';
     SwitcherTabComponent,
     GoldOfferItemComponent,
     BasketComponent,
+    WowSellGoldComponent,
 
   ],
   imports: [
@@ -96,7 +98,8 @@ import { BasketComponent } from './components/basket/basket.component';
     MatCell,
     MatHeaderRow,
     MatRow,
-    MatTableModule
+    MatTableModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

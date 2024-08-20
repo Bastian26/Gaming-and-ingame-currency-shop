@@ -5,6 +5,7 @@ import {User} from "../../../models/user";
 import {Store} from "@ngrx/store";
 import {AppState} from "../../../store/model/app-state-model";
 import {Subject, takeUntil} from "rxjs";
+import { FormBuilder } from "@angular/forms";
 
 @Component({
   selector: 'app-wow-gold-offer',
@@ -16,13 +17,22 @@ export class WowGoldOfferComponent implements OnInit {
   modalGoldSellOpen = false;
   region: string[] = ["EU", "US"];
   fractions: string[] = ["wow.fraction.alliance", "wow.fraction.horde"]
+  sellGoldForm = this.formBuilder.group({
+    sellPrice: 0,
+    maxQuantity: 0,
+    sellFraction: '',
+    sellServer: ''
+  })
 
   selectedServer: string;
   servers = euRetailServers;
   ngUnsubscribe = new Subject<void>();
 
 
-  constructor(private store: Store<AppState>) {}
+  constructor(
+    private store: Store<AppState>,
+    private formBuilder: FormBuilder
+  ) {}
 
   ngOnInit(): void {
     this.selectedServer = euRetailServers[0].value;
@@ -59,4 +69,8 @@ export class WowGoldOfferComponent implements OnInit {
     this.ngUnsubscribe.complete();
   }
 
+  // protected readonly onsubmit = onsubmit;
+  sellGold(): void {
+    console.log('Your order has been submitted', this.sellGoldForm.value)
+  }
 }
