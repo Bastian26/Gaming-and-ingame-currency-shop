@@ -2,32 +2,44 @@
     <!-- TODO: später in wow-sell-gold ausalgern -->
     <div class="modal-content">
       <!-- Modal contents here -->
-      <form [formGroup]="sellGoldForm" (ngSubmit)="sellGold()">
-        <div>
-          <label for="sell-price">Verkaupfspreis / 100k</label>
-          <input id="sell-price" type="number" formControlName="sellPrice">
-        </div>
-        <div>
-          <label for="max-quantity">Max. Menge</label>
-          <input id="max-quantity" type="number" formControlName="maxQuantity">
-        </div>
-        <div>
-          <label for="max-fraction">Max. Menge</label>
-          <select id='sell-fraction' formControlName="sellFraction"[(ngModel)]="fractions">
+      <form class="grid-form" [formGroup]="sellGoldForm" (ngSubmit)="sellGold()">
+          <label for="sell-price" class="form-item">Verkaupfspreis € / 100k</label>
+          <input id="sell-price" min="1" step="any" class="form-item" type="number" formControlName="sellPrice">
+
+          <label for="max-quantity" class="form-item">Max. Menge</label>
+          <input id="max-quantity" min="100000" step="100000" class="form-item" type="number" formControlName="maxQuantity">
+
+<!--        <label class="form-item">US/EU</label>-->
+<!--        <label class="form-item">Classic/Retail</label>-->
+        <app-switcher-tab
+          class="switcher-tab-servers form-item form-item-checkbox "
+          [providedContentElements]="region">
+        </app-switcher-tab>
+        <app-switcher-tab
+          class="switcher-tab-fractions form-item form-item-checkbox "
+          [providedContentElements]="fractions">
+        </app-switcher-tab>
+
+          <label for="sell-fraction" class="form-item">Fraktion</label>
+          <select id="sell-fraction" class="form-item"formControlName="sellFraction"[(ngModel)]="fractions">
             <option *ngFor="let item of fractions" [value]="item">
-              {{item}}
+              {{ item | translate }}
             </option>
           </select>
 
-        </div>
-        <div>
-          <label for="sell-server">Server</label>
-          <input id="sell-server" type="text" formControlName="sellServer">
-        </div>
+          <label for="sell-server" class="form-item">Server</label>
+          <select id='sell-server' class="form-item" formControlName="sellServer" [(ngModel)]="servers">
+            <option *ngFor="let item of servers" [value]="item">
+              {{item.name}}
+            </option>
+          </select>
 
+        <div class="form-item-avatar form-extra">
+          <img class="avatar-img" src="assets/img/icons/avatarPlaceholder.png" alt="Avatar user profile placeholder">
+        </div>
+        <button class="form-item-btn-close" (click)="closeGoldSellModal()">Schließen</button>
+        <button class="form-item-btn-sell" type="submit">Verkaufen</button>
       </form>
-      <button class="button" type="submit">Verkaufen</button>
-      <button (click)="closeGoldSellModal()">Schließen</button>
     </div>
 </app-modal>
 

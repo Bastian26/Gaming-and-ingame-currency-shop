@@ -104,7 +104,7 @@
         "currency": "Währung",
         "currency-name": "Währungsname",
         "game": "Spiel",
-        "chaneg-amount": "Change amount"
+        "change-amount": "Change amount"
       }
     }
   },

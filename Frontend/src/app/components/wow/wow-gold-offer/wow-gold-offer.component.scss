@@ -80,4 +80,74 @@
   padding: 20px;
   border-radius: 5px;
   color: black;
+
+  button {
+    margin-top: 25px;
+    font-weight: 500;
+    font-size: 1.1rem;
+    border: 0px;
+    border-radius: 5px;
+    height: 2.3rem;
+  }
+
+  // Css of the grid system in the sell modal
+  .grid-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Three columns */
+    grid-template-rows: auto auto auto auto auto auto; /* 5 Rows */
+    gap: 16px; /* Gap/Margin between grid elements */
+  }
+
+  .form-item {
+    background-color: #f0f0f0; // Background clor of form item
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .form-item-avatar {
+    grid-column: 3; /* Horizontally position of column 3 */
+    grid-row: 1 / span 4; /* Align over 4 rows */
+    position: relative;
+
+    .avatar-img {
+      width: 57%;
+      height: auto;
+      position: absolute;
+      top: 20%;
+      left: 22%;
+    }
+  }
+
+  .form-item-btn-close {
+    grid-column: 1; /* Horizontally position of column 1*/
+    grid-row: 6; /* Vertically position of row 5 */
+    background-color: #e0e0e0;
+
+    background: rgba(129, 127, 127, 0.51);
+    color: #303030;
+
+    &:hover {
+      background: #454444;
+      color: white;
+    }
+  }
+
+  .form-item-btn-sell {
+    grid-column: 3; /* Horizontally position of column 3 */
+    grid-row: 6; /* Vertically position of row 5 */
+    background-color: #e0e0e0;
+
+    background: rgba(109, 97, 193, 0.51);
+    color: #303030;
+
+    &:hover {
+      background: #6679fa;
+      color: white;
+    }
+  }
+
+  .form-item-checkbox {
+    background-color: white;
+
+  }
 }

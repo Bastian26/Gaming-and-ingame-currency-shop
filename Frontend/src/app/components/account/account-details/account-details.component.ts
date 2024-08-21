@@ -54,15 +54,16 @@ export class AccountDetailsComponent implements OnInit {
 
 
   incrementAmount(element: PeriodicElement) {
-    element.amount += 1;
+    element.amount += 1000;
   }
 
   decrementAmount(element: PeriodicElement) {
-    if (element.amount > 0) {
-      element.amount -= 1;
+    if (element.amount > 1000) {
+      element.amount -= 1000;
     }
   }
 
+  // TODO: Call to service to change Currencydata for particular user
   confirmDataChange() {
   }
 
@@ -88,16 +89,36 @@ export class AccountDetailsComponent implements OnInit {
       : this.containsSpecialCharacter = false;
   }
 
-    checkNewPasswordRequirements(parameter: string): boolean {
-    return true;
-
-
-   /* if (this.minLengthOf8 && this.containsUpperAndLowercaseLetter && this.containsNumber
-      && this.containsSpecialCharacter && this.oldPassword.length > 1
-      && (this.newPassword === this.newPasswordRepeat)) {
-      return true;
-    }
-    return false;*/
+    // Check password requirements for weak to strong display (in colors)
+    checkNewPasswordRequirements(passwordStrength: string): boolean {
+      switch(passwordStrength) {
+        case 'weak': {
+          if (this.minLengthOf8) {
+            return true;
+          }
+          break;
+        }
+        case 'medium': {
+          if (this.minLengthOf8 && this.containsUpperAndLowercaseLetter) {
+            return true;
+          }
+          break;
+        }
+        case 'strong': {
+          if (this.minLengthOf8 && this.containsUpperAndLowercaseLetter && this.containsNumber) {
+            return true;
+          }
+          break;
+        }
+        case 'very-strong': {
+          if (this.minLengthOf8 && this.containsUpperAndLowercaseLetter && this.containsNumber
+            && this.containsSpecialCharacter) {
+            return true;
+          }
+          break;
+        }
+      }
+      return false;
   }
 
 
@@ -110,6 +131,7 @@ export class AccountDetailsComponent implements OnInit {
     return false;
   }
 
+  // TODO: post call to service and then backend
   changePassword() {
 
   }
