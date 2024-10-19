@@ -25,8 +25,10 @@ public class SecurityConfig {
                 .addFilterBefore(new JwtAuthFilter(userAuthProvider), BasicAuthenticationFilter.class)
                 .sessionManagement(customizer -> customizer.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests((requests) ->
-                        requests.requestMatchers(HttpMethod.POST, "/login", "/register").permitAll()
-                                .anyRequest().authenticated()
+                        requests.requestMatchers(HttpMethod.POST, "/api/v1/users/login", "/api/v1/users/register")
+                                .permitAll()
+                                .anyRequest()
+                                .authenticated()
                 );
 
         return httpSecurity.build();
