@@ -1,6 +1,7 @@
 package com.gamejoy.domain.user.controllers;
 
 import com.gamejoy.config.security.UserAuthProvider;
+import com.gamejoy.domain.general.dto.ApiResponseWrapper;
 import com.gamejoy.domain.user.dtos.CredentialDto;
 import com.gamejoy.domain.user.dtos.SignUpDto;
 import com.gamejoy.domain.user.dtos.UserDto;
@@ -24,25 +25,33 @@ public class AuthController {
     private final UserAuthProvider userAuthProvider;
 
     @PostMapping("/login")
-    public ResponseEntity<UserDto> login(@RequestBody CredentialDto credentialDto) {
+    public ResponseEntity<ApiResponseWrapper<UserDto>> login(@RequestBody CredentialDto credentialDto) {
         UserDto user = userService.login(credentialDto);
         user.setToken(userAuthProvider.createToken(user));
-        return ResponseEntity.ok(user);
+
+        ApiResponseWrapper<UserDto> response = new ApiResponseWrapper<UserDto>(
+                true, user, String.format("User %s logged in", credentialDto.userName()));
+        return ResponseEntity.ok(response);
     }
 
     @PostMapping("/register")
-    public ResponseEntity<UserDto> register(@RequestBody SignUpDto signUpDto) {
+    public ResponseEntity<ApiResponseWrapper<UserDto>> register(@RequestBody SignUpDto signUpDto) {
         UserDto user = userService.register(signUpDto);
         user.setToken(userAuthProvider.createToken(user));
-        return ResponseEntity.created(URI.create("/users/" + user.getId())).body(user);
+
+        ApiResponseWrapper<UserDto> response = new ApiResponseWrapper<UserDto>(
+                true, user, String.format("User %s registered", signUpDto.userName()));
+        return ResponseEntity.created(URI.create("/api/v1/users/" + user.getId())).body(response);
     }
 
+    //todo: still todo
     @PostMapping("/changeUsername")
     public ResponseEntity<String> changeUsername(Long id, @Valid String username) {
         String usernameChangeResponse = userService.changeUsername(id, username);
         return ResponseEntity.ok().body(usernameChangeResponse);
     }
 
+    //todo: still todo
     @PostMapping("/changePassword")
     public ResponseEntity<String> changePassword(Long id, @Valid char[] password) {
         String passwordChangeResponse = userService.changePassword(id, password);
