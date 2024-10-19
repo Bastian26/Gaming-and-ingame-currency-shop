@@ -4,6 +4,12 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+# Ignore specific XML files (intelliJ)
+misc.xml
+modules.xml
+vcs.xml
+workspace.xml
+
 ### STS ###
 .apt_generated
 .classpath
