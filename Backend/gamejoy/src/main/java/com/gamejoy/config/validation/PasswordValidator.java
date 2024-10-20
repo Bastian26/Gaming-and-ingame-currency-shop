@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
  * 1 lowercase letter, 1 special character as well as a number
  */
 @Component
-public class PasswordValidator implements ConstraintValidator<ValidPassword, String> {
+public class PasswordValidator implements ConstraintValidator<ValidPassword, char[]> {
 
     private static final int MIN_LENGTH = 8;
 
@@ -20,11 +20,15 @@ public class PasswordValidator implements ConstraintValidator<ValidPassword, Str
     public void initialize(ValidPassword constraintAnnotation) {
     }
 
+    // Password must be at least 3 characters long and must not contain any special characters
     @Override
-    public boolean isValid(String password, ConstraintValidatorContext context) {
-        if (password == null || password.length() < MIN_LENGTH) {
+    public boolean isValid(char[] charPassword, ConstraintValidatorContext context) {
+
+
+        if (charPassword == null || charPassword.length < MIN_LENGTH) {
             return false;
         }
+        String password = String.valueOf(charPassword);
 
         boolean hasUpperCase = false;
         boolean hasLowerCase = false;

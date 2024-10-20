@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
@@ -31,12 +32,8 @@ public class User {
     @NotNull
     @Column(name = "last_name", nullable = false)
     private String lastName;
-    // Custom validator - PasswordValidator
-    @ValidUsername
     @Column(name = "user_name", nullable = false)
     private String userName;
-    // Custom validator - UsernameValidator
-    @ValidPassword
     @Column(nullable = false)
     private String password;
     @NotNull
@@ -57,7 +54,7 @@ public class User {
     @UpdateTimestamp
     private LocalDateTime lastModified;
     @Column(name = "created_dt", nullable = false)
-    @UpdateTimestamp
+    @CreationTimestamp
     private LocalDateTime createdAt;
 
     /**

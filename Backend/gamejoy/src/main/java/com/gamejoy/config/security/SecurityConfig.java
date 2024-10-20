@@ -12,6 +12,9 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
+import static com.gamejoy.constants.ApiPaths.AUTH_API_LOGIN;
+import static com.gamejoy.constants.ApiPaths.AUTH_API_REGISTER;
+
 @RequiredArgsConstructor
 @Configuration
 @EnableWebSecurity
@@ -25,7 +28,7 @@ public class SecurityConfig {
                 .addFilterBefore(new JwtAuthFilter(userAuthProvider), BasicAuthenticationFilter.class)
                 .sessionManagement(customizer -> customizer.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests((requests) ->
-                        requests.requestMatchers(HttpMethod.POST, "/api/v1/users/login", "/api/v1/users/register")
+                        requests.requestMatchers(HttpMethod.POST, AUTH_API_LOGIN, AUTH_API_REGISTER)
                                 .permitAll()
                                 .anyRequest()
                                 .authenticated()

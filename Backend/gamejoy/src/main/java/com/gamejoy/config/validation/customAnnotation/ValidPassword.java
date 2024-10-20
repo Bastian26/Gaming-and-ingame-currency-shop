@@ -1,6 +1,5 @@
 package com.gamejoy.config.validation.customAnnotation;
 
-;
 import com.gamejoy.config.validation.PasswordValidator;
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;

@@ -15,6 +15,7 @@ import com.gamejoy.domain.general.exceptions.NotFoundException;
 import com.gamejoy.domain.user.mappers.UserMapper;
 import com.gamejoy.domain.user.repositories.UserRepository;
 import com.gamejoy.domain.userIngameCurrency.services.UserIngameCurrencyService;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -57,12 +58,12 @@ public class UserService {
         if (oUser.isPresent()) {
             throw new UserAlreadyExistsException(String.format("User %s already exists", signUpDto.userName()));
         }
-        // Password validation
-        if (!passwordValidator.isValid(new String(signUpDto.password()), null)) {
+
+        // Alternative manual validation approach without annotation (@Valid, @ValidPassword etc.).
+        /*if (!passwordValidator.isValid(new String(signUpDto.password()), null)) {
             throw new InvalidPasswordException(
                     String.format("Invalid password for user %s", signUpDto.userName()));
-        }
-
+        }*/
 
         User user = userMapper.signUpToUser(signUpDto);
         // encode password with passwordEncoder
@@ -100,9 +101,9 @@ public class UserService {
         Optional<User> userO = userRepository.findById(id);
         User user = null;
 
-        if (!passwordValidator.isValid(new String(password), null)) {
-            throw new AppException("Invalid password", HttpStatus.BAD_REQUEST);
-        }
+//        if (!passwordValidator.isValid(new String(password), null)) {
+//            throw new AppException("Invalid password", HttpStatus.BAD_REQUEST);
+//        }
         if (userO.isPresent()) {
             user = userO.get();
             user.setPassword(passwordEncoder.encode(CharBuffer.wrap(password)));

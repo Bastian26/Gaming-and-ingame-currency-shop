@@ -41,7 +41,7 @@ export class AccountComponent implements OnInit {
     this.store.dispatch(LoadingActions.loadingOn());
     this.axiosService.request(
       "POST",
-      "/api/v1/users/login",
+      "/api/v1/auth/login",
       {
         userName: input.userName,
         password: input.password,
@@ -64,7 +64,7 @@ export class AccountComponent implements OnInit {
     // todo: später in einen service auslagern
     this.axiosService.request(
       "POST",
-      "/api/v1/users/register",
+      "/api/v1/auth/register",
       {
         firstName: input.firstName,
         lastName: input.lastName,

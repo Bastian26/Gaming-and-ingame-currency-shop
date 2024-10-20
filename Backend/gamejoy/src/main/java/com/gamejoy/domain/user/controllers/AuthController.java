@@ -16,8 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.net.URI;
 
+import static com.gamejoy.constants.ApiPaths.AUTH_API_BASE_URL;
+
 @RestController
-@RequestMapping("/api/v1/users")
+@RequestMapping(AUTH_API_BASE_URL)
 @RequiredArgsConstructor
 public class AuthController {
 
@@ -35,26 +37,12 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<ApiResponseWrapper<UserDto>> register(@RequestBody SignUpDto signUpDto) {
+    public ResponseEntity<ApiResponseWrapper<UserDto>> register(@Valid @RequestBody SignUpDto signUpDto) {
         UserDto user = userService.register(signUpDto);
         user.setToken(userAuthProvider.createToken(user));
 
         ApiResponseWrapper<UserDto> response = new ApiResponseWrapper<UserDto>(
                 true, user, String.format("User %s registered", signUpDto.userName()));
         return ResponseEntity.created(URI.create("/api/v1/users/" + user.getId())).body(response);
-    }
-
-    //todo: still todo
-    @PostMapping("/changeUsername")
-    public ResponseEntity<String> changeUsername(Long id, @Valid String username) {
-        String usernameChangeResponse = userService.changeUsername(id, username);
-        return ResponseEntity.ok().body(usernameChangeResponse);
-    }
-
-    //todo: still todo
-    @PostMapping("/changePassword")
-    public ResponseEntity<String> changePassword(Long id, @Valid char[] password) {
-        String passwordChangeResponse = userService.changePassword(id, password);
-        return ResponseEntity.ok().body(passwordChangeResponse);
     }
 }

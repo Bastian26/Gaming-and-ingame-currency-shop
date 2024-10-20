@@ -16,13 +16,14 @@ public class UsernameValidator implements ConstraintValidator<ValidUsername, Str
     public void initialize(ValidUsername constraintAnnotation) {
     }
 
+    // Username must be at least 3 characters long and must not contain any special characters
     @Override
     public boolean isValid(String username, ConstraintValidatorContext context) {
-        if (username == null || username.isEmpty() || username.length() < MIN_LENGTH) {
+        if (username == null || username.length() < MIN_LENGTH) {
             return false;
         }
 
         // Checks that there are no special characters in the username
-        return !Pattern.matches("[^a-zA-Z0-9]", username);
+        return Pattern.matches("^[a-zA-Z0-9]+$", username);
     }
 }
