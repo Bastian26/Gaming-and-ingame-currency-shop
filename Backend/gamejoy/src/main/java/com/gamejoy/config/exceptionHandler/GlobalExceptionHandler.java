@@ -39,8 +39,8 @@ public class GlobalExceptionHandler {
                                                                HttpServletRequest request) {
         String message = "Validation failed";
         String details = String.format("Requested URI: %s", request.getRequestURI());
-        String timestamp = Instant.now().toString();
         String errorCode = "VALIDATION_FAILED";
+        String timestamp = Instant.now().toString();
 
         // Create a validation error list
         List<String> validationErrors = ex.getBindingResult().getAllErrors().stream()
@@ -60,57 +60,37 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(UserNotFoundException.class)
-    public ResponseEntity<ApiError> handleUserNotFound(UserNotFoundException ex,
+    public ResponseEntity<ApiError> handleUserNotFound(UserNotFoundException exception,
                                                        HttpServletRequest request) {
         // Alternative with ServletWebRequest - request.getDescription(false) (shows URI path with more information)
-        String details = String.format("Requested URI: %s", request.getRequestURI());
-        String timestamp = Instant.now().toString();
-        String errorCode = "USER_NOT_FOUND";
-        log.error("Exception occurred: {}, Request Details: {}", ex.getMessage(), details, ex);
-
-        return new ResponseEntity<>(new ApiError(
-                404,
-                ex.getMessage(),
-                Collections.<String>emptyList(),
-                details,
-                timestamp,
-                errorCode
-        ), HttpStatus.NOT_FOUND);
+        return createApiError(exception, request, 404, HttpStatus.NOT_FOUND, "USER_NOT_FOUND");
     }
 
     @ExceptionHandler(InvalidPasswordException.class)
-    public ResponseEntity<ApiError> handleInvalidPassword(InvalidPasswordException ex, HttpServletRequest request) {
-        String details = String.format("Requested URI: %s", request.getRequestURI());
-        String timestamp = Instant.now().toString();
-        String errorCode = "INVALID_PASSWORD";
-        log.error("Exception occurred: {}, Request Details: {}", ex.getMessage(), details, ex);
-
-        return new ResponseEntity<>(new ApiError(
-                400,
-                ex.getMessage(),
-                Collections.<String>emptyList(),
-                details,
-                timestamp,
-                errorCode
-        ), HttpStatus.BAD_REQUEST);
+    public ResponseEntity<ApiError> handleInvalidPassword(InvalidPasswordException exception, HttpServletRequest request) {
+        return createApiError(exception, request, 400, HttpStatus.BAD_REQUEST, "INVALID_PASSWORD");
     }
 
     @ExceptionHandler(UserAlreadyExistsException.class)
-    public ResponseEntity<ApiError> handleUserAlreadyExists(UserNotFoundException ex,
+    public ResponseEntity<ApiError> handleUserAlreadyExists(UserNotFoundException exception,
                                                        HttpServletRequest request) {
         // Alternative with ServletWebRequest - request.getDescription(false) (shows URI path with more information)
+        return createApiError(exception, request, 409, HttpStatus.UNPROCESSABLE_ENTITY, "USER_ALREADY_EXISTS");
+    }
+
+    private ResponseEntity<ApiError> createApiError(Exception exception, HttpServletRequest request,
+                                                    int statusCode, HttpStatus httpStatus, String errorCode) {
         String details = String.format("Requested URI: %s", request.getRequestURI());
         String timestamp = Instant.now().toString();
-        String errorCode = "USER_ALREADY_EXISTS";
-        log.error("Exception occurred: {}, Request Details: {}", ex.getMessage(), details, ex);
+        log.error("Exception occurred: {}, Request Details: {}", exception.getMessage(), details, exception);
 
         return new ResponseEntity<>(new ApiError(
-                409,
-                ex.getMessage(),
+                statusCode,
+                exception.getMessage(),
                 Collections.<String>emptyList(),
                 details,
                 timestamp,
                 errorCode
-        ), HttpStatus.UNPROCESSABLE_ENTITY);
+        ), httpStatus);
     }
 }
